@@ -4,11 +4,11 @@ export function TestSolid() {
   const [theme, setTheme] = createSignal(localStorage.getItem("theme"));
 
   createEffect(() => {
-    if (theme()) {
-      document.documentElement.setAttribute("data-theme", theme());
-      localStorage.setItem("theme", theme());
+    localStorage.setItem("theme", theme() || "dark");
+    if (theme() === "light") {
+      document.documentElement.classList.remove("dark");
     } else {
-      setTheme("dark");
+      document.documentElement.classList.add("dark");
     }
   });
 
@@ -18,8 +18,11 @@ export function TestSolid() {
 
   return (
     <div>
-      <button class="border border-red-500 p-4" onClick={handleSwitchTheme}>
-        {theme() === "dark" ? "dark" : "light"}
+      <button
+        class="border border-red-500 p-4 dark:border-green-500"
+        onClick={handleSwitchTheme}
+      >
+        {theme() === "light" ? "light" : "dark"}
       </button>
     </div>
   );
