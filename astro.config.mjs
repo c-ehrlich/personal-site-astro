@@ -20,4 +20,12 @@ export default defineConfig({
       },
     }),
   ],
+  markdown: {
+    shikiConfig: {
+      // TODO: pick a theme from https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
+      theme: "vitesse-light",
+      wrap: true,
+    },
+    extendDefaultPlugins: true,
+  },
 });
