@@ -1,20 +1,25 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
 
-const blogPostsUnsorted = await getCollection('blog');
-const blogPosts = blogPostsUnsorted.sort((a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime());
+const blogPostsUnsorted = await getCollection("blog");
+const blogPosts = blogPostsUnsorted.sort(
+  (a, b) =>
+    new Date(b.data.published).getTime() - new Date(a.data.published).getTime(),
+);
 ---
 
 <Layout title="Blog - Christopher Ehrlich">
-	<main>
-		<h2>Blog</h2>
-		<ul>
-			{blogPosts.map(post => (
-				<li>
-					<a href={`/blog/${post.slug}`}>{post.data.title}</a>
-				</li>
-			))}
-		</ul>
-	</main>
+  <main>
+    <h2>Blog</h2>
+    <ul>
+      {
+        blogPosts.map((post) => (
+          <li>
+            <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
 </Layout>

@@ -79,17 +79,17 @@ const ThemeToggle = () => {
         <StyledDayModeButton
           onClick={toggleTheme}
           color={lightTheme.text}
-          title='Toggle Light Mode'
-          height='36px'
-          width='36px'
+          title="Toggle Light Mode"
+          height="36px"
+          width="36px"
         />
       ) : (
         <StyledNightModeButton
           onClick={toggleTheme}
           color={darkTheme.text}
-          title='Toggle Dark Mode'
-          height='36px'
-          width='36px'
+          title="Toggle Dark Mode"
+          height="36px"
+          width="36px"
         />
       )}
     </>
@@ -119,7 +119,7 @@ const ThemeToggle = () => {
   }
 
   // Otherwise, render the same component as before
-}
+};
 ```
 
 `useEffect` only runs once the site renders on the client, so we wait until that happens. This simple pattern is the solution to a large percentage of Next.js Hydration errors.
