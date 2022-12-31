@@ -4,13 +4,15 @@ const blog = defineCollection({
   schema: {
     title: z.string(),
     description: z.string(),
-    published: z.date(),
-    updated: z.date().optional(),
-    // published: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-    // updated: z
-    //   .string()
-    //   .regex(/^\d{4}-\d{2}-\d{2}$/)
-    //   .optional(),
+    published: z
+      .string()
+      .regex(/^\d{4}\/\d{2}\/\d{2}$/)
+      .transform((str) => new Date(str)),
+    updated: z
+      .string()
+      .regex(/^\d{4}\/\d{2}\/\d{2}$/)
+      .transform((str) => new Date(str))
+      .optional(),
     tags: z.array(z.string()),
   },
 });
@@ -19,7 +21,10 @@ const projects = defineCollection({
   schema: {
     title: z.string(),
     description: z.string(),
-    published: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    published: z
+      .string()
+      .regex(/^\d{4}\/\d{2}\/\d{2}$/)
+      .transform((str) => new Date(str)),
     tags: z.array(z.string()),
     // TODO: better image validator (/**/*.{png,jpg,jpeg,gif,svg}})
     image: z.string(),
