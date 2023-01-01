@@ -23,7 +23,7 @@ const { title } = Astro.props;
     <ThemeToggleInline />
   </head>
   <body
-    class="flex min-h-screen flex-col gap-4 bg-amber-100 p-4 transition-all duration-300 dark:bg-black"
+    class="flex min-h-screen flex-col gap-4 bg-background p-4 text-text transition-all duration-300"
   >
     <div class="flex w-full justify-between">
       <Image
@@ -36,7 +36,7 @@ const { title } = Astro.props;
       />
       <ThemeToggle client:only="solid-js" />
     </div>
-    <h1>Hi, I'm Christopher</h1>
+    <h1 class="text-text">Hi, I'm Christopher</h1>
     <ul class="flex list-none gap-2">
       <li class="hover:underline"><a href="/">Home</a></li>
       <li class="hover:underline"><a href="/projects">Projects</a></li>
