@@ -12,8 +12,6 @@ export function ThemeToggle() {
       } else {
         document.documentElement.classList.add("dark");
       }
-    } else {
-      setTheme("dark");
     }
   });
 
