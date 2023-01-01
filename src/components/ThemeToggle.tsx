@@ -1,6 +1,11 @@
 import { createEffect, createSignal, JSX, Switch, Match } from "solid-js";
 import { Motion, Presence } from "@motionone/solid";
 
+/**
+ * This has theme flash unless it is used together with
+ * the `ThemeToggleInline` component.
+ */
+
 export function ThemeToggle() {
   const [theme, setTheme] = createSignal(localStorage.getItem("theme"));
 
