@@ -1,13 +1,11 @@
-import { createEffect, createSignal, JSX } from "solid-js";
+import { createEffect, createSignal, JSX, Switch, Match } from "solid-js";
 import { Motion, Presence } from "@motionone/solid";
 
 export function ThemeToggle() {
   const [theme, setTheme] = createSignal(localStorage.getItem("theme"));
 
   createEffect(() => {
-    console.log("running createEffect", theme());
     if (theme()) {
-      console.log("setting theme");
       localStorage.setItem("theme", theme() || "dark");
       if (theme() === "light") {
         document.documentElement.classList.remove("dark");
@@ -24,29 +22,33 @@ export function ThemeToggle() {
   }
 
   return (
-    <div>
-      <p class="text-red-500">{theme()}</p>
-      <Presence exitBeforeEnter>
-        {theme() === "light" ? (
-          <ThemeButton handleClick={handleSwitchTheme}>🌤️</ThemeButton>
-        ) : (
-          <ThemeButton handleClick={handleSwitchTheme}>🌙</ThemeButton>
-        )}
-      </Presence>
-    </div>
+    <Presence exitBeforeEnter initial={false}>
+      <Switch fallback={<div>idk</div>}>
+        <Match when={theme() === "light"}>
+          <ThemeToggleButton handleClick={handleSwitchTheme}>
+            🌤️
+          </ThemeToggleButton>
+        </Match>
+        <Match when={theme() === "dark"}>
+          <ThemeToggleButton handleClick={handleSwitchTheme}>
+            🌙
+          </ThemeToggleButton>
+        </Match>
+      </Switch>
+    </Presence>
   );
 }
 
-function ThemeButton(props: {
+function ThemeToggleButton(props: {
   children: JSX.Element;
   handleClick: () => void;
 }) {
   return (
     <Motion.div
-      initial={{ y: -50, opacity: 0.5 }}
+      initial={{ y: -30, opacity: 0.25 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: 50, opacity: 0.5 }}
-      transition={{ duration: 0.2 }}
+      exit={{ y: 30, opacity: 0.25 }}
+      transition={{ duration: 0.25 }}
     >
       <button class="text-4xl" onClick={props.handleClick}>
         {props.children}

@@ -1,0 +1,10 @@
+- [ ] Logo
+  - [ ] not working on Vercel
+  - [ ] not sharp in dev => research image component more
+- [ ] ThemeToggle
+  - [x] Get it working
+  - [x] Don't animate in on initial page load
+  - [ ] Get it working without theme flash
+- [ ] Decide how to present work (mix projects / oss? etc)
+- [ ] Decide how to make contacts page
+- [ ] Styling
