@@ -8,6 +8,7 @@ module.exports = {
         background: "rgb(var(--color-background) / <alpha-value>)",
         text: "rgb(var(--color-text) / <alpha-value>)",
         link: "rgb(var(--color-link) / <alpha-value>)",
+        test: "green",
       },
     },
   },

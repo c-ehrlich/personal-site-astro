@@ -4,8 +4,8 @@
 - [ ] Decide how to present work (mix projects / oss? etc)
 - [ ] Decide how to make contacts page
 - [ ] Styling
-
 - [x] ThemeToggle
   - [x] Get it working
   - [x] Don't animate in on initial page load
   - [x] Get it working without theme flash
+  - [x] Get theme colors working
