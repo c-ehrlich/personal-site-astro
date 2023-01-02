@@ -1,11 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { createBlogTagList } from "../../util/blogTags";
+import { createBlogTagListWithCount } from "../../util/blogTags";
 
-const tags = await createBlogTagList();
+const tags = await createBlogTagListWithCount();
 ---
 
-<Layout title="Tags - Christopher Ehrlich">
+<Layout title="Tags">
   <h2 class="text-4xl">Tags</h2>
   <ul>
     {

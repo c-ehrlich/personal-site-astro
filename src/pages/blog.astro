@@ -1,42 +1,21 @@
 ---
 import { getCollection } from "astro:content";
-import Pill from "../components/Pill.astro";
+import PostList from "../components/blog/PostList.astro";
 import Layout from "../layouts/Layout.astro";
-import { formatBlogDate } from "../util/date";
 
-const blogPostsUnsorted = await getCollection("blog");
-const blogPosts = blogPostsUnsorted.sort(
+const postsUnsorted = await getCollection("blog");
+const posts = postsUnsorted.sort(
   (a, b) =>
     new Date(b.data.published).getTime() - new Date(a.data.published).getTime(),
 );
 ---
 
-<Layout title="Blog - Christopher Ehrlich">
+<Layout title="Blog">
   <main class="flex flex-col gap-4">
     <div>
       <h2 class="text-4xl">Blog</h2>
       <a href="/blog/tags">View all tags</a>
     </div>
-    <ul class="flex flex-col gap-6">
-      {
-        blogPosts.map((post) => (
-          <li class="flex flex-col">
-            <a class="-mb-1 text-lg" href={`/blog/${post.slug}`}>
-              {post.data.title}
-            </a>
-            <p class="mb-[2px] text-sm">
-              {formatBlogDate(post.data.published)}
-            </p>
-            <div class="flex flex-wrap gap-2">
-              {post.data.tags
-                .sort((a, b) => a.localeCompare(b))
-                .map((tag) => (
-                  <Pill tag={tag} hashtag={true} resource="blog" />
-                ))}
-            </div>
-          </li>
-        ))
-      }
-    </ul>
+    <PostList posts={posts} />
   </main>
 </Layout>
