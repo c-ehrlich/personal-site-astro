@@ -6,14 +6,23 @@
   /* Design System Theming */
   /* alternative method https://stackoverflow.com/questions/64872861/how-to-use-css-variables-with-tailwind-css */
   html {
-    --color-background: 255 255 255;
-    --color-text: 0 0 0;
-    --color-link: 0 255 255;
+    --color-background: 15deg 50% 95%;
+    --color-text: 15deg 5% 5%;
+    --color-link: 15deg 45% 40%;
   }
 
   html.dark {
-    --color-background: 0 0 0;
-    --color-text: 255 255 255;
-    --color-link: 0 0 255;
+    --color-background: 15deg 35% 5%;
+    --color-text: 15deg 15% 90%;
+    --color-link: 15deg 45% 70%;
   }
+}
+
+body {
+  background-color: hsl(var(--color-background));
+  color: hsl(var(--color-text));
+}
+
+a {
+  color: hsl(var(--color-link));
 }

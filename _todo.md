@@ -1,6 +1,6 @@
 - [ ] Logo
   - [x] not working on Vercel
-  - [ ] not sharp in dev => research image component more or just use a plain img?
+  - [x] not sharp in dev => research image component more or just use a plain img?
 - [ ] Decide how to present work (mix projects / oss? etc)
 - [ ] Decide how to make contacts page
 - [ ] Styling
@@ -9,3 +9,5 @@
   - [x] Don't animate in on initial page load
   - [x] Get it working without theme flash
   - [x] Get theme colors working
+  - [ ] Toggle itself shouldn't flash in (can we make it part of the initial render?)
+- [ ] Fix page titles (shouldn't have to write " - Christopher Ehrlich" all the time)

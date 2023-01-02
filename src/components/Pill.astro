@@ -1,0 +1,13 @@
+---
+interface Props {
+  tag: string;
+  hashtag?: boolean;
+  resource?: string;
+}
+const { tag, hashtag = false, resource = null } = Astro.props;
+---
+
+<a
+  class="rounded-[3px] border-2 border-link px-1 text-[11px] font-semibold uppercase hover:bg-link/20"
+  href={resource ? `/${resource}/tag/${tag}` : null}>{hashtag && "#"}{tag}</a
+>

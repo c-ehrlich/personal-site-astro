@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { createBlogTagList } from "../../util/blogTags";
+
+const tags = await createBlogTagList();
+---
+
+<Layout title="Tags - Christopher Ehrlich">
+  <h2 class="text-4xl">Tags</h2>
+  <ul>
+    {
+      tags.map((tag) => (
+        <li>
+          <a class="font-semibold" href={`/blog/tag/${tag.tag}`}>
+            {tag.tag}
+          </a>{" "}
+          <span class="text-text/60">
+            ⦁ {tag.count} {tag.count === 1 ? "post" : "posts"}
+          </span>{" "}
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
