@@ -18,11 +18,59 @@
   }
 }
 
-body {
-  background-color: hsl(var(--color-background));
-  color: hsl(var(--color-text));
+a {
+  @apply text-link;
 }
 
-a {
-  color: hsl(var(--color-link));
+/*
+ * Formatting for blog markdown
+ */
+
+article h1 {
+  @apply mb-4 text-4xl;
+}
+
+article h2 {
+  @apply mt-6 mb-4 text-3xl;
+}
+
+article h3 {
+  @apply text-2xl;
+}
+
+article h4 {
+  @apply text-xl;
+}
+
+article h5 {
+  @apply text-lg;
+}
+
+article p {
+  @apply mb-2;
+}
+
+article code:not(.astro-code) {
+  @apply rounded border-[1px] border-link/40 bg-link/20 px-1;
+}
+
+article ol {
+  @apply mb-2 list-inside list-decimal;
+}
+
+article ul {
+  @apply mb-2 list-inside list-disc;
+  /* TODO: check this does the right thing */
+}
+
+article {
+  @apply mb-16;
+}
+
+/**
+ * Code blocks
+ */
+
+.astro-code {
+  @apply mt-4 mb-4;
 }
