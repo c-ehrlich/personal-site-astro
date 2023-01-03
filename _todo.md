@@ -11,7 +11,7 @@
   - [x] Get theme colors working
   - [ ] Toggle itself shouldn't flash in (can we make it part of the initial render?)
 - [ ] Write better intro
-- [ ] Favicon
+- [x] Favicon
 - [x] Fix page titles (shouldn't have to write " - Christopher Ehrlich" all the time)
 - [x] rss
   - [x] get rss feed working
