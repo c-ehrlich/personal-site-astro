@@ -14,10 +14,10 @@ const { posts } = Astro.props;
   {
     posts.map((post) => (
       <li class="flex flex-col">
-        <a class="-mb-1 text-lg" href={`/blog/${post.slug}`}>
+        <a class="-mb-[2px] text-2xl" href={`/blog/${post.slug}`}>
           {post.data.title}
         </a>
-        <p class="mb-[2px] text-sm">{formatBlogDate(post.data.published)}</p>
+        <p class="mb-1 text-sm">{formatBlogDate(post.data.published)}</p>
         <div class="flex flex-wrap gap-2">
           {post.data.tags
             .sort((a, b) => a.localeCompare(b))
