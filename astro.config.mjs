@@ -29,4 +29,5 @@ export default defineConfig({
     extendDefaultPlugins: true,
   },
   output: "static",
+  site: "https://c-ehrlich.dev",
 });

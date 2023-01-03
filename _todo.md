@@ -10,4 +10,10 @@
   - [x] Get it working without theme flash
   - [x] Get theme colors working
   - [ ] Toggle itself shouldn't flash in (can we make it part of the initial render?)
+- [ ] Write better intro
+- [ ] Favicon
 - [x] Fix page titles (shouldn't have to write " - Christopher Ehrlich" all the time)
+- [x] rss
+  - [x] get rss feed working
+  - [x] make rss feed nice
+  - [x] order posts by date
