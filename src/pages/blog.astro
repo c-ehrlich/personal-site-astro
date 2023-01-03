@@ -14,7 +14,9 @@ const posts = postsUnsorted.sort(
   <main class="flex flex-col gap-4">
     <div>
       <h2 class="text-4xl">Blog</h2>
-      <a href="/blog/tags">View all tags</a>
+      <a href="/blog/tags">View all tags</a> • <a href="/blog/rss.xml"
+        >RSS Feed</a
+      >
     </div>
     <PostList posts={posts} />
   </main>
