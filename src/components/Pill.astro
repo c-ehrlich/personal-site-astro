@@ -1,7 +1,8 @@
 ---
-interface Props {
+export interface Props {
   tag: string;
   hashtag?: boolean;
+  // TODO: type this based on content collections?
   resource?: string;
 }
 const { tag, hashtag = false, resource = null } = Astro.props;

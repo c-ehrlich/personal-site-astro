@@ -11,7 +11,7 @@ tags:
   - Prisma
   - Zod
   - Mantine UI
-image: /img/project/anket-screenshot.png
+image: /img/projects/anket/anket-screenshot.png
 github: https://github.com/c-ehrlich/anket
 deployed: https://anket-surveys.vercel.app
 ---

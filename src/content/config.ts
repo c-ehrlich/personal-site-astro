@@ -26,8 +26,10 @@ const projects = defineCollection({
       .regex(/^\d{4}\/\d{2}\/\d{2}$/)
       .transform((str) => new Date(str)),
     tags: z.array(z.string()),
-    // TODO: better image validator (/**/*.{png,jpg,jpeg,gif,svg}})
-    image: z.string(),
+    image: z
+      .string()
+      // match any subpath to an image ie "/a/b/c/d.jpg"
+      .regex(/\/([^\/^.]+\/)+[^\/^.]+\.(jpg|jpeg|png|gif|webp|svg)$/),
     github: z.string().url().optional(),
     deployed: z.string().url().optional(),
   },

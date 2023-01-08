@@ -82,6 +82,27 @@ declare module 'astro:content' {
   collection: "projects",
   data: InferEntrySchema<"projects">
 },
+"CreateT3App.md": {
+  id: "CreateT3App.md",
+  slug: "CreateT3App",
+  body: string,
+  collection: "projects",
+  data: InferEntrySchema<"projects">
+},
+"UI.md": {
+  id: "UI.md",
+  slug: "UI",
+  body: string,
+  collection: "projects",
+  data: InferEntrySchema<"projects">
+},
+"Vocab.md": {
+  id: "Vocab.md",
+  slug: "Vocab",
+  body: string,
+  collection: "projects",
+  data: InferEntrySchema<"projects">
+},
 },
 
 	};
