@@ -39,13 +39,13 @@ const { title } = Astro.props;
           quality={70}
         />
         <ThemeToggle client:only="solid-js" />
+        <!-- <ThemeToggle client:load /> -->
       </div>
       <h1 class="font-serif text-3xl font-semibold text-text">
         Christopher Ehrlich
       </h1>
       <ul class="flex list-none gap-4 font-bold uppercase">
         <li class="hover:underline"><a href="/">Home</a></li>
-        <li class="hover:underline"><a href="/projects">Projects</a></li>
         <li class="hover:underline"><a href="/blog">Blog</a></li>
         <li class="hover:underline"><a href="/contact">Contact</a></li>
       </ul>

@@ -1,6 +1,6 @@
 ---
 title: Create T3 App
-description: TKTK i did dozens of commits, cli, website, code review, leading translations, docker, etc
+description: The best way to start a full-stack, typesafe Next.js app. As a member of the core team I have contributed features all across the stack, as well as reviewing PRs and profiling bugs. Additionally I am leading the initiative to translate the docs, which thanks to amazing contributors are now available in 8 languages and counting.
 published: 2023/01/01
 tags:
   - Typescript
