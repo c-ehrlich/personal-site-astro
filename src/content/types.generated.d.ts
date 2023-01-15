@@ -64,6 +64,13 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
+"trpc-data-flows.md": {
+  id: "trpc-data-flows.md",
+  slug: "trpc-data-flows",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
 },
 "blog-draft": {
 "treat-next-like-express.md": {
