@@ -50,7 +50,7 @@ article p {
   @apply mb-2;
 }
 
-article code:not(.astro-code) {
+article p code {
   @apply rounded border-[1px] border-link/40 bg-link/20 px-1;
 }
 
