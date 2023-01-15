@@ -20,7 +20,7 @@
 }
 
 a {
-  @apply text-link;
+  @apply text-link hover:underline;
 }
 
 /*
