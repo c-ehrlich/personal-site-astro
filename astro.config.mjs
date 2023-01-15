@@ -22,8 +22,8 @@ export default defineConfig({
   ],
   markdown: {
     shikiConfig: {
-      // TODO: pick a theme from https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
-      theme: "vitesse-light",
+      // theme list: https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
+      theme: "dark-plus",
       wrap: true,
     },
     extendDefaultPlugins: true,
