@@ -7,7 +7,7 @@ tags:
   - Clean Code
 ---
 
-> ⚠️ **This article is outdated!** I wrote this for React Query v2/v3. Some of the patterns here are no longer good practice, and the code snippets will break entirely in v5. I'll leave this article up because I don't like when content online disappears, but please consider that this may no longer be good advice before implementing any of it.
+> ⚠️ **This article is outdated!** I wrote this for React Query v2/v3. Some of the patterns here are no longer good practice, and the code snippets will break entirely in v5. I'll leave this article up because I don't like when content online disappears, but please be aware that you probably shouldn't take it as advice.
 
 React Query is by far my favourite library for dealing with server state. But after spending some time reading both code posted by people on support channels such as Stack Overflow and the React Query Discord, and some Open Source projects that use React Query, I've noticed that there are two very easy to implement patterns that make React Query code easier to read and less prone to bugs.
 
