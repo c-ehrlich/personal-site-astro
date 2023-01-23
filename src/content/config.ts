@@ -1,5 +1,19 @@
 import { z, defineCollection } from "astro:content";
 
+export const SITE = {
+  title: "Christopher Ehrlich",
+  description: "Christopher Ehrlich's personal website",
+  defaultLanguage: "en_US",
+};
+
+export const OPEN_GRAPH = {
+  image: {
+    src: "img/og-image.png",
+    alt: "Christopher Ehrlich's personal website",
+  },
+  twitter: "ccccjjjjeeee",
+};
+
 const blog = defineCollection({
   schema: {
     title: z.string(),

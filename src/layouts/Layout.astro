@@ -1,5 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
+import BaseHead from "../components/BaseHead.astro";
 import { ThemeToggle } from "../components/ThemeToggle";
 import ThemeToggleInline from "../components/ThemeToggleInline.astro";
 import avatar from "../media/avatar.jpg";
@@ -7,14 +8,21 @@ import "../styles/global.css";
 
 export interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title = "Christopher Ehrlich", description = "TKTK Description" } =
+  Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <BaseHead
+      title={title}
+      description={description}
+      image={`https://og.c-ehrlich.dev?title=${title}`}
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="Christopher Ehrlich's personal website" />
