@@ -7,7 +7,19 @@ export interface Props {
 const {
   title,
   description,
-  image = new URL("/img/og-image.png", Astro.url),
+  image = new URL(
+    `https://og.c-ehrlich.dev/api/blog/${JSON.stringify({
+      authorImg: "https://avatars.githubusercontent.com/u/459267",
+      authorName: 'Alex "KATT" Johansson',
+      authorTitle: "Creator of tRPC",
+      date: "2021-08-01",
+      description:
+        "Eiusmod elit id dolor proident Lorem ut quis exercitation velit cupidatat sit occaecat. Fugiat do culpa exercitation quis anim tempor excepteur sit qui dolor ex aute in. Proident magna eiusmod mollit amet tempor aute in. Labore officia Lorem velit adipisicing reprehenderit. Incididunt aute aliqua Lorem qui consectetur eiusmod pariatur ut exercitation ea est mollit quis.",
+      readingTimeInMinutes: 5,
+      title:
+        "This is going to be a really long title for a blog post, it will probably wrap around a few times",
+    })}`,
+  ),
 } = Astro.props;
 ---
 
