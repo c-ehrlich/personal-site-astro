@@ -13,7 +13,7 @@
     "format:check": "prettier --check --plugin-search-dir=. **/*.{cjs,mjs,ts,tsx,md,json,astro}"
   },
   "dependencies": {
-    "@astrojs/image": "^0.12.1",
+    "@astrojs/image": "^0.13.0",
     "@astrojs/solid-js": "^1.2.3",
     "@motionone/solid": "^10.15.4",
     "htm": "^3.1.1",

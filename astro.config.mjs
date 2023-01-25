@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-
 import image from "@astrojs/image";
 import solidJs from "@astrojs/solid-js";
 import tailwind from "@astrojs/tailwind";
@@ -10,10 +9,8 @@ const hexLoader = {
   transform(code, id) {
     const [path, query] = id.split("?");
     if (query != "raw-hex") return null;
-
     const data = fs.readFileSync(path);
     const hex = data.toString("hex");
-
     return `export default '${hex}';`;
   },
 };
@@ -40,9 +37,10 @@ export default defineConfig({
       theme: "dark-plus",
       wrap: true,
     },
-    smartypants: false, // TODO: could try using this
-    gfm: false, // TODO: could try using this
+    smartypants: false,
+    gfm: false,
   },
+
   output: "static",
   site: "https://c-ehrlich.dev/",
   vite: {
