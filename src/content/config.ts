@@ -15,7 +15,7 @@ export const OPEN_GRAPH = {
 };
 
 const blog = defineCollection({
-  schema: {
+  schema: z.object({
     title: z.string(),
     description: z.string(),
     published: z
@@ -28,11 +28,11 @@ const blog = defineCollection({
       .transform((str) => new Date(str))
       .optional(),
     tags: z.array(z.string()),
-  },
+  }),
 });
 
 const projects = defineCollection({
-  schema: {
+  schema: z.object({
     title: z.string(),
     description: z.string(),
     published: z
@@ -46,7 +46,7 @@ const projects = defineCollection({
       .regex(/\/([^\/^.]+\/)+[^\/^.]+\.(jpg|jpeg|png|gif|webp|svg)$/),
     github: z.string().url().optional(),
     deployed: z.string().url().optional(),
-  },
+  }),
 });
 
 export const collections = {
