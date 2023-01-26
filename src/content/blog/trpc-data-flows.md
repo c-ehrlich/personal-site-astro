@@ -1,5 +1,5 @@
 ---
-title: "[video] How tRPC really works"
+title: "How tRPC really works (video)"
 description: "Everything you need to know about tRPC data flows"
 published: 2023/01/13
 updated: 2023/01/13
