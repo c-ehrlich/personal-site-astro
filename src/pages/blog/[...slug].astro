@@ -8,6 +8,7 @@ export async function getStaticPaths() {
     // Pass blog entry via props
     params: { slug: entry.slug },
     props: { entry },
+    // TODO: maybe calculate reading time here
   }));
 }
 
@@ -20,7 +21,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={entry.data.title}>
+<Layout title={entry.data.title} isBlog={true}>
   <article>
     <h1>{entry.data.title}</h1>
     <Content />

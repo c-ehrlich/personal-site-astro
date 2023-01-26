@@ -8,17 +8,16 @@ import "../styles/global.css";
 
 export interface Props {
   title?: string;
-  description?: string;
+  isBlog?: boolean;
 }
 
-const { title = "Christopher Ehrlich", description = "TKTK Description" } =
-  Astro.props;
+const { title = "Christopher Ehrlich", isBlog = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} isBlog={isBlog} />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="Christopher Ehrlich's personal website" />
