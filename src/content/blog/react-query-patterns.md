@@ -1,6 +1,5 @@
 ---
 title: Writing clean React Query code
-description: Two easy patterns that you can implement
 published: 2022/05/28
 tags:
   - React Query

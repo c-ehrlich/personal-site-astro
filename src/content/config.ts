@@ -14,10 +14,9 @@ export const OPEN_GRAPH = {
   twitter: "ccccjjjjeeee",
 };
 
-const blog = defineCollection({
+const blogCollection = defineCollection({
   schema: z.object({
     title: z.string(),
-    description: z.string(),
     published: z
       .string()
       .regex(/^\d{4}\/\d{2}\/\d{2}$/)
@@ -31,7 +30,7 @@ const blog = defineCollection({
   }),
 });
 
-const projects = defineCollection({
+const projectsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -50,6 +49,6 @@ const projects = defineCollection({
 });
 
 export const collections = {
-  blog,
-  projects,
+  blog: blogCollection,
+  projects: projectsCollection,
 };

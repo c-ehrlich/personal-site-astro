@@ -1,6 +1,5 @@
 ---
 title: Chaining Middleware in Next.js
-description: How to write a Next.js backend with (almost) all the freedom of Express
 published: 2022/04/14
 tags:
   - Next.js
