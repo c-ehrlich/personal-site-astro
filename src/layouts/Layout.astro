@@ -12,16 +12,20 @@ export interface Props {
   isBlog?: boolean;
 }
 
-const { title = "Christopher Ehrlich", isBlog = false } = Astro.props;
+const {
+  title = "Christopher Ehrlich",
+  description = "Teacher turned developer. Create T3 App, tRPC, etc.",
+  isBlog = false,
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead title={title} isBlog={isBlog} />
+    <BaseHead title={title} description={description} isBlog={isBlog} />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Christopher Ehrlich's personal website" />
+    <meta name="description" content={description} />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>

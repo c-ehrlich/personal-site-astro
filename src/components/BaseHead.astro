@@ -1,15 +1,12 @@
 ---
 export interface Props {
   title: string;
-  description?: string;
+  description: string;
   image?: string;
   isBlog?: boolean;
 }
 
-const title = Astro.props.title ?? "Christopher Ehrlich";
-const description =
-  Astro.props.description ??
-  "Teacher turned developer. Create T3 App, tRPC, etc.";
+const { title, description, isBlog } = Astro.props;
 const image = new URL(
   Astro.props.isBlog
     ? `https://og.c-ehrlich.dev/api/blog?input=${encodeURIComponent(
@@ -29,7 +26,7 @@ const image = new URL(
 <meta name="generator" content={Astro.generator} />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
+<title>{isBlog ? title : title + " - Christopher Ehrlich"}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
