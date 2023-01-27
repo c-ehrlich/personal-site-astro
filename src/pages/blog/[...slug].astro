@@ -21,7 +21,11 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={entry.data.title} isBlog={true}>
+<Layout
+  title={entry.data.title}
+  description={entry.data.description}
+  isBlog={true}
+>
   <article>
     <h1>{entry.data.title}</h1>
     <Content />

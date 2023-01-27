@@ -1,24 +1,25 @@
 ---
 export interface Props {
   title: string;
+  description?: string;
   image?: string;
   isBlog?: boolean;
 }
 
-const {
-  title,
-  image = new URL(
-    Astro.props.isBlog
-      ? `https://og.c-ehrlich.dev/api/blog?input=${encodeURIComponent(
-          JSON.stringify({
-            title,
-            minRead: 5, // TODO: dont hardcode this lol
-          }),
-        )}`
-      : `https://og.c-ehrlich.dev/api/landing`,
-  ),
-} = Astro.props;
-const description = "Christopher Ehrlich's personal website.";
+const title = Astro.props.title ?? "Christopher Ehrlich";
+const description =
+  Astro.props.description ??
+  "Teacher turned developer. Create T3 App, tRPC, etc.";
+const image = new URL(
+  Astro.props.isBlog
+    ? `https://og.c-ehrlich.dev/api/blog?input=${encodeURIComponent(
+        JSON.stringify({
+          title,
+          minRead: 5, // TODO: dont hardcode this lol
+        }),
+      )}`
+    : `https://og.c-ehrlich.dev/api/landing`,
+);
 ---
 
 <!-- Global Metadata -->

@@ -1,5 +1,6 @@
 ---
 title: How To Start Contributing to Open Source
+description: Everyone says you should do it. But how?
 published: 2022/05/25
 updated: 2022/06/20
 tags:

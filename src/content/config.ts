@@ -17,6 +17,7 @@ export const OPEN_GRAPH = {
 const blogCollection = defineCollection({
   schema: z.object({
     title: z.string(),
+    description: z.string().optional(),
     published: z
       .string()
       .regex(/^\d{4}\/\d{2}\/\d{2}$/)
