@@ -9,6 +9,6 @@ const { tag, hashtag = false, resource = null } = Astro.props;
 ---
 
 <a
-  class="rounded-[3px] border-2 border-link px-1 text-[11px] font-semibold uppercase hover:bg-link/20"
+  class="rounded-[3px] border-2 border-link px-1 text-[11px] font-semibold uppercase hover:bg-link/20 hover:no-underline"
   href={resource ? `/${resource}/tag/${tag}` : null}>{hashtag && "#"}{tag}</a
 >
