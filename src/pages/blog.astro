@@ -5,8 +5,7 @@ import Layout from "../layouts/Layout.astro";
 
 const postsUnsorted = await getCollection("blog");
 const posts = postsUnsorted.sort(
-  (a, b) =>
-    new Date(b.data.published).getTime() - new Date(a.data.published).getTime(),
+  (a, b) => b.data.published.getTime() - a.data.published.getTime(),
 );
 ---
 

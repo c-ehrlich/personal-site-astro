@@ -4,15 +4,16 @@ export interface Props {
   description: string;
   image?: string;
   isBlog?: boolean;
+  minRead?: string | undefined;
 }
 
-const { title, description, isBlog } = Astro.props;
+const { title, description, isBlog, minRead } = Astro.props;
 const image = new URL(
   Astro.props.isBlog
     ? `https://og.c-ehrlich.dev/api/blog?input=${encodeURIComponent(
         JSON.stringify({
           title,
-          minRead: 5, // TODO: dont hardcode this lol
+          minRead: minRead ?? "ERROR missing minRead", // TODO: dont hardcode this lol
         }),
       )}`
     : `https://og.c-ehrlich.dev/api/landing`,

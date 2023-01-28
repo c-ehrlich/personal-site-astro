@@ -2,6 +2,7 @@
 import Pill from "../Pill.astro";
 import { formatBlogDate } from "../../util/date";
 import type { CollectionEntry } from "astro:content";
+import { readTime } from "../../util/readTime";
 
 interface Props {
   posts: Array<CollectionEntry<"blog">>;
@@ -17,7 +18,9 @@ const { posts } = Astro.props;
         <a class="-mb-[2px] text-2xl" href={`/blog/${post.slug}`}>
           {post.data.title}
         </a>
-        <p class="mb-1 text-sm">{formatBlogDate(post.data.published)}</p>
+        <p class="mb-1 text-sm">
+          {formatBlogDate(post.data.published)} • {readTime(post)}
+        </p>
         <div class="flex flex-wrap gap-2">
           {post.data.tags
             .sort((a, b) => a.localeCompare(b))

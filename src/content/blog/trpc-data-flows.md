@@ -1,5 +1,5 @@
 ---
-title: "How tRPC really works (video)"
+title: "How tRPC really works"
 description: "Everything you need to know about data flows in tRPC"
 published: 2023/01/13
 updated: 2023/01/13
@@ -7,6 +7,7 @@ tags:
   - "tRPC"
   - "create-t3-app"
   - "YouTube"
+videoLength: 20
 ---
 
 Today I released my first educational YouTube video, "How tRPC really works".

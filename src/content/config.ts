@@ -28,6 +28,7 @@ const blogCollection = defineCollection({
       .transform((str) => new Date(str))
       .optional(),
     tags: z.array(z.string().min(1)),
+    videoLength: z.number().min(1).optional(),
   }),
 });
 

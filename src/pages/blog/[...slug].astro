@@ -1,6 +1,7 @@
 ---
 import { getCollection, CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { readTime } from "../../util/readTime";
 
 export async function getStaticPaths() {
   const docs = await getCollection("blog");
@@ -8,7 +9,6 @@ export async function getStaticPaths() {
     // Pass blog entry via props
     params: { slug: entry.slug },
     props: { entry },
-    // TODO: maybe calculate reading time here
   }));
 }
 
@@ -25,6 +25,7 @@ const { Content } = await entry.render();
   title={entry.data.title}
   description={entry.data.description}
   isBlog={true}
+  minRead={readTime(entry)}
 >
   <article>
     <h1>{entry.data.title}</h1>
