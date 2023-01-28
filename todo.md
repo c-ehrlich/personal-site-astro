@@ -1,0 +1,7 @@
+- figure out how to get gradient to work in og-images
+  - does satori process css in a nonstandard way?
+  - does it exclude browser styles? if so, which browser styles are making it work in test but not in satori
+- reading time
+  - in article list
+  - in og-image
+  - add override possibility? videoLength schema?
