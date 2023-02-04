@@ -1,49 +1,25 @@
-# Welcome to [Astro](https://astro.build)
+# Christopher Ehrlich's Personal Site
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/s/github/withastro/astro/tree/latest/examples/basics)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+This is the repo for my personal site. It uses Astro 2.0, with Solid.js islands for interactivity.
 
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
+| Command          | Action                                             |
+| :--------------- | :------------------------------------------------- |
+| `pnpm i`         | Installs dependencies                              |
+| `pnpm dev`       | Starts local dev server at `localhost:3000`        |
+| `pnpm build`     | Build your production site to `./dist/`            |
+| `pnpm preview`   | Preview your build locally, before deploying       |
+| `pnpm astro ...` | Run CLI commands like `astro add`, `astro preview` |
 
-## 👀 Want to learn more?
+## Adding content
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+To add content, use Markdown files in the `/content` directory. There are folders for three categories: `/blog` (blog posts), `/blog-draft` (same as before, but not published), `/projects` (personal projects, not being used in this version of the website but keeping in case I want to add them again).
+
+When adding a new piece of content, make sure the frontmatter matches the schema in `/content/config.ts`. This site uses the new "Content Collections" feature from Astro 2.0, so the build will fail if any frontmatter doesn't match the schema. This makes the content typesafe and prevents publishing broken/nonstandard markdown files.
+
+## Dynamic Open Graph Images
+
+Due to issues with running Vercel edge functions from an Astro app, Open Graph images are generated from a [separate repo](https://github.com/c-ehrlich/personal-site-ogimage) for the time being. The API call for fetching the images in located in `BaseHead.astro`.
