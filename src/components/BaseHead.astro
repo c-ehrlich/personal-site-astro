@@ -13,7 +13,7 @@ const image = new URL(
     ? `https://og.c-ehrlich.dev/api/blog?input=${encodeURIComponent(
         JSON.stringify({
           title,
-          minRead: minRead ?? "ERROR missing minRead", // TODO: dont hardcode this lol
+          minRead: minRead ?? "ERROR missing minRead",
         }),
       )}`
     : `https://og.c-ehrlich.dev/api/landing`,
