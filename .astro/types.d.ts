@@ -63,6 +63,13 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"blog": {
+"advanced-trpc.md": {
+  id: "advanced-trpc.md",
+  slug: "advanced-trpc",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
 "contributing-to-oss.md": {
   id: "contributing-to-oss.md",
   slug: "contributing-to-oss",
@@ -80,6 +87,13 @@ declare module 'astro:content' {
 "react-query-patterns.md": {
   id: "react-query-patterns.md",
   slug: "react-query-patterns",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
+"ryan-carniato-stream.md": {
+  id: "ryan-carniato-stream.md",
+  slug: "ryan-carniato-stream",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
