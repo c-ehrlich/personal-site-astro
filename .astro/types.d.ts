@@ -105,6 +105,13 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
+"typescript.md": {
+  id: "typescript.md",
+  slug: "typescript",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
 },
 "blog-draft": {
 "treat-next-like-express.md": {

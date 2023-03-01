@@ -27,6 +27,10 @@ a {
  * Formatting for blog markdown
  */
 
+article {
+  @apply text-lg;
+}
+
 article h1 {
   @apply mb-4 text-4xl;
 }
@@ -76,12 +80,16 @@ article img {
   @apply my-4;
 }
 
+article .caption {
+  @apply w-full text-center font-mono text-sm italic text-gray-500;
+}
+
 /**
  * Code blocks
  */
 
 .astro-code {
-  @apply mt-4 mb-4 p-2;
+  @apply mt-4 mb-4 rounded p-2 text-sm;
 }
 
 /**
