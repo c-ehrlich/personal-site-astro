@@ -158,6 +158,23 @@ Writing docs in both TypeScript and JavaScript is of course an option, but most 
 
 Let's not forget why we are educating developers in first place: to help them build stuff. The simple truth is that TypeScript has become the language of full-stack web development, and teaching anything other than JavaScript fundamentals in JavaScript feels dishonest at this point. Not many new projects are being started in JavaScript, and rightfully so, so why are we still insisting on using it for docs and courses? By teaching TypeScript early, you are empowering new developers to move faster, be less frustrated, and build better things.
 
+That being said, **this entire post is big time bikeshedding**. I learned JavaScript first and only learned TypeScript much later. I ended up ok. And the number one resource I recommend to people who want to learn programming is [freeCodeCamp](https://www.freecodecamp.org/), which still teaches entirely in JavaScript.
+
+So why do I recommend it even though it's in JavaScript? Based on my experience as a teacher and university lecturer, I believe that the most important things a course can have are:
+
+- **Project-based** - Students should be spending most of their time self-directed building projects, running into problems, and figuring out how to fix them. Not following a video of someone explaining something.
+- **Has a community of people supporting each other** - I believe in the power of self-directed learning, but it can be hard to stay motivated sometimes when you're alone. Being around other motivated people is infectious. Another nice thing about freeCodeCamp in this regard is that the more experienced learners often stick around and help the newbies who are following in their footsteps.
+- **Nonlinear** - A big factor of being motivated is interest. A nonlinear program allows learners to pursue the things that they are interested in.
+
+While I strongly believe that teaching TypeScript-first is better, It's not even in the top 3 factors that I use to evaluate material for beginners.
+
+## Wrapping up
+
+So what's the conclusion then?
+
+1. If you are creating educational materials, make them TypeScript first
+2. If you are a learner, TypeScript-first materials are better but it's not the most important factor
+
 ## Thanks for reading!
 
 What do you think? Please feel free to [contact me](/contact) and share your thoughts on this topic.
