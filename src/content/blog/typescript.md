@@ -172,8 +172,8 @@ While I strongly believe that teaching TypeScript-first is better, It's not even
 
 So what's the conclusion then?
 
-1. If you are creating educational materials, make them TypeScript first
-2. If you are a learner, TypeScript-first materials are better but it's not the most important factor
+1. If you are creating educational materials, make them TypeScript first.
+2. If you are a learner, TypeScript-first materials are better but it's not the most important factor.
 
 ## Thanks for reading!
 
