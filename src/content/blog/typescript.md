@@ -142,7 +142,7 @@ Snark aside, things like this still occur much more often than they should.
 
 Things are rapidly improving in this regard though. On the backend, [Fastify](https://www.fastify.io/) and [Nitro](https://nitro.unjs.io/) are typed much better than Express was, and [tRPC](https://trpc.io/) sets a new standard for typesafety over the wire. The same is true for the frontend, for example [MapleLeaf](https://twitter.com/heyImMapleLeaf) has been doing a lot for the type safety in [Remix](http://remix.run/)
 
-The other issue is the TypeScript server. Occasionally, and especially in projects that are use a lot of inference through libraries like Zod, it will slow down to a crawl or even incorrectly report type errors where there aren't any.
+The other issue is the TypeScript server. Occasionally, and especially in projects that use a lot of inference through libraries like Zod, it will slow down to a crawl or even incorrectly report type errors where there aren't any.
 
 The solution is simple: hit CMD + Shift + P, and restart the TypeScript server. But beginners might not know about this, and either way it doesn't detract from the main point: **The TypeScript server should not show false positives under any circumstances**.
 
