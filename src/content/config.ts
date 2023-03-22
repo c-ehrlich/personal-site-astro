@@ -50,7 +50,14 @@ const projectsCollection = defineCollection({
   }),
 });
 
+const miscCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
   projects: projectsCollection,
+  misc: miscCollection,
 };
