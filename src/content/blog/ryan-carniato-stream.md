@@ -4,9 +4,10 @@ description: We also talked about education, abstraction and practicality, dx, o
 published: 2023/02/03
 updated: 2022/02/03
 tags:
-  - Open Source
-  - Free Code Camp
-  - Fav
+  - Create T3 App
+  - Next.js
+  - Ryan Carniato
+  - Guest Appearance
 videoLength: 150
 ---
 
@@ -15,6 +16,7 @@ Last night I had the immense privilege of being on the stream of Ryan Carniato, 
 The first 2.5 hours are my conversation with Ryan, and then Ryan looks at React Server Components for about 1.5 hours, and the final hour is Ryan discussing recent news in the JavaScript ecosystem.
 
 Topics include:
+
 - Practicality and Abstraction in learning
 - Ways to learn new technology
 - Making content to answer questions and learn
