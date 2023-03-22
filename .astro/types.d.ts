@@ -114,12 +114,35 @@ declare module 'astro:content' {
 },
 },
 "blog-draft": {
+"cfp-ct3a.md": {
+  id: "cfp-ct3a.md",
+  slug: "cfp-ct3a",
+  body: string,
+  collection: "blog-draft",
+  data: any
+},
+"foo.mdx": {
+  id: "foo.mdx",
+  slug: "foo",
+  body: string,
+  collection: "blog-draft",
+  data: any
+},
 "treat-next-like-express.md": {
   id: "treat-next-like-express.md",
   slug: "treat-next-like-express",
   body: string,
   collection: "blog-draft",
   data: any
+},
+},
+"misc": {
+"trpc-viennajs.md": {
+  id: "trpc-viennajs.md",
+  slug: "trpc-viennajs",
+  body: string,
+  collection: "misc",
+  data: InferEntrySchema<"misc">
 },
 },
 "projects": {

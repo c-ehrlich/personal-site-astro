@@ -1,0 +1,35 @@
+---
+import { getCollection, CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { readTime } from "../../util/readTime";
+
+export async function getStaticPaths() {
+  const docs = await getCollection("blog-draft");
+  return docs.map((entry) => ({
+    // Pass blog entry via props
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  // Optionally use `CollectionEntry` for type safety
+  entry: CollectionEntry<"blog-draft">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout
+  title={entry.data.title}
+  description={entry.data.description}
+  isBlog={true}
+  minRead={readTime(entry)}
+>
+  <article>
+    <h1>{entry.data.title}</h1>
+    <Content />
+    <p class="mt-4"><a href="/blog">← Back to blog</a></p>
+  </article>
+</Layout>

@@ -1,0 +1,33 @@
+---
+import { getCollection, CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { readTime } from "../../util/readTime";
+
+export async function getStaticPaths() {
+  const docs = await getCollection("misc");
+  return docs.map((entry) => ({
+    // Pass blog entry via props
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  // Optionally use `CollectionEntry` for type safety
+  entry: CollectionEntry<"misc">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout
+  title={entry.data.title}
+  isBlog={true}
+>
+  <article>
+    <h1>{entry.data.title}</h1>
+    <Content />
+    <p class="mt-4"><a href="/">← Home</a></p>
+  </article>
+</Layout>
