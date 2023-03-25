@@ -9,8 +9,9 @@ title: "tRPC talk at Vienna JS - Resources"
 ## Videos
 
 - [Chris Bautista: Making typesafe APIs easy with tRPC](https://www.youtube.com/watch?v=2LYM8gf184U)
-- [How tRPC really works](https://www.youtube.com/watch?v=x4mu-jOiA0Q)
 - [Discussing tRPC & GraphQL with Theo Browne & Max Stoiber](https://www.youtube.com/watch?v=2-407yO8nEU)
+- [How tRPC really works](https://www.youtube.com/watch?v=x4mu-jOiA0Q)
+- [Advanced tRPC - Callers, functions, and gSSP](https://www.youtube.com/watch?v=G2ZzmgShHgQ)
 
 ## Tools
 
