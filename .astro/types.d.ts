@@ -84,6 +84,13 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
+"next-is-an-spa.md": {
+  id: "next-is-an-spa.md",
+  slug: "next-is-an-spa",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
 "react-query-patterns.md": {
   id: "react-query-patterns.md",
   slug: "react-query-patterns",
@@ -114,16 +121,9 @@ declare module 'astro:content' {
 },
 },
 "blog-draft": {
-"cfp-ct3a.md": {
-  id: "cfp-ct3a.md",
-  slug: "cfp-ct3a",
-  body: string,
-  collection: "blog-draft",
-  data: any
-},
-"foo.mdx": {
-  id: "foo.mdx",
-  slug: "foo",
+"rsc.md": {
+  id: "rsc.md",
+  slug: "rsc",
   body: string,
   collection: "blog-draft",
   data: any
