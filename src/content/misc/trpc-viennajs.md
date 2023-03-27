@@ -20,7 +20,17 @@ title: "tRPC talk at Vienna JS - Resources"
 - [tRPC Panel](https://github.com/iway1/trpc-panel) - Testing UI and documentation for your tRPC endpoints
 - [tRPC-OpenAPI](https://github.com/jlalmes/trpc-openapi)
 
+## Large OSS Codebases using tRPC
+
+- [Cal.com](https://github.com/calcom/cal.com)
+- [Badass Courses (total TypeScript, Kent C Dodds, etc)](https://github.com/skillrecordings/egghead-next)
+
+## Tutorials
+
+- [Theo - T3 Stack Tutorial - FROM 0 TO PROD FOR $0 (Next.js, tRPC, TypeScript, Tailwind, Prisma & More)](https://www.youtube.com/watch?v=YkOSUVzOAA4)
+- [Jack Herrington - T3: TRPC, Prisma and NextAuth Done Right](https://www.youtube.com/watch?v=J1gzN1SAhyM)
+
 ## My stuff
 
-- [twitter](https://twitter.com/ccccjjjjeeee)
+- [Twitter](https://twitter.com/ccccjjjjeeee)
 - [YouTube](https://youtube.com/@ccccjjjjeee)
