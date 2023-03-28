@@ -24,6 +24,7 @@ title: "tRPC talk at Vienna JS - Resources"
 
 - [Cal.com](https://github.com/calcom/cal.com)
 - [Badass Courses (total TypeScript, Kent C Dodds, etc)](https://github.com/skillrecordings/egghead-next)
+- [Answer Overflow](https://www.answeroverflow.com/)
 
 ## Tutorials
 
