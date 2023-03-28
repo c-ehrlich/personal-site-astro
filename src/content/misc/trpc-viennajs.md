@@ -19,6 +19,7 @@ title: "tRPC talk at Vienna JS - Resources"
 - [Create T3 Turbo](https://github.com/t3-oss/create-t3-turbo) - Monorepo with tRPC, Next.js, and React Native
 - [tRPC Panel](https://github.com/iway1/trpc-panel) - Testing UI and documentation for your tRPC endpoints
 - [tRPC-OpenAPI](https://github.com/jlalmes/trpc-openapi) - Create OpenAPI endpoints from your tRPC codebase
+- [Kitchen Sink](https://kitchen-sink.trpc.io/react-hook-form) - Everything you need to make awesome forms with tRPC
 
 ## Large OSS Codebases using tRPC
 
