@@ -2,6 +2,8 @@
 title: "tRPC talk at Vienna JS - Resources"
 ---
 
+- [Talk Slides](https://github.com/c-ehrlich/trpc-viennajs-talk/blob/main/slides-export.pdf)
+
 ## tRPC
 
 - [tRPC.io](https://trpc.io/)
