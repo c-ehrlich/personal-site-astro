@@ -56,8 +56,16 @@ const miscCollection = defineCollection({
   }),
 });
 
+const bookNotesCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    published: z.string().regex(/^\d{4}\/\d{2}\/\d{2}$/).transform((str) => new Date(str)),
+  })
+})
+
 export const collections = {
   blog: blogCollection,
   projects: projectsCollection,
   misc: miscCollection,
+  bookNotes: bookNotesCollection,
 };
