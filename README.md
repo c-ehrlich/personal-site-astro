@@ -22,4 +22,4 @@ When adding a new piece of content, make sure the frontmatter matches the schema
 
 ## Dynamic Open Graph Images
 
-Due to issues with running Vercel edge functions from an Astro app, Open Graph images are generated from a [separate repo](https://github.com/c-ehrlich/personal-site-ogimage) for the time being. The API call for fetching the images in located in `BaseHead.astro`.
+Due to issues with running Vercel edge functions from an Astro app, Open Graph images are generated from a [separate repo](https://github.com/c-ehrlich/personal-site-ogimage) for the time being. The API call for fetching the images is located in `BaseHead.astro`.

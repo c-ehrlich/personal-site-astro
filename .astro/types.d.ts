@@ -77,6 +77,13 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
+"jutanium-stream.md": {
+  id: "jutanium-stream.md",
+  slug: "jutanium-stream",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
 "next-hydration-error.md": {
   id: "next-hydration-error.md",
   slug: "next-hydration-error",
@@ -119,6 +126,13 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
+"viennajs-trpc.md": {
+  id: "viennajs-trpc.md",
+  slug: "viennajs-trpc",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
 },
 "blog-draft": {
 "rsc.md": {
@@ -128,12 +142,14 @@ declare module 'astro:content' {
   collection: "blog-draft",
   data: any
 },
-"treat-next-like-express.md": {
-  id: "treat-next-like-express.md",
-  slug: "treat-next-like-express",
+},
+"bookNotes": {
+"人は聞き方が９割.md": {
+  id: "人は聞き方が９割.md",
+  slug: "人は聞き方が９割",
   body: string,
-  collection: "blog-draft",
-  data: any
+  collection: "bookNotes",
+  data: InferEntrySchema<"bookNotes">
 },
 },
 "misc": {
