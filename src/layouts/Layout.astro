@@ -5,6 +5,7 @@ import { ThemeToggle } from "../components/ThemeToggle";
 import ThemeToggleInline from "../components/ThemeToggleInline.astro";
 import avatar from "../media/avatar.jpg";
 import "../styles/global.css";
+import { fade } from "astro:transitions";
 
 export interface Props {
   title?: string;
@@ -22,24 +23,23 @@ const {
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead
-      title={title}
-      description={description}
-      isBlog={isBlog}
-      minRead={minRead}
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description} />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    <title>
-      {title ? `${title} - Christopher Ehrlich` : "Christopher Ehrlich"}
-    </title>
-    <ThemeToggleInline />
-  </head>
+<html transition:animate={fade({ duration: "0.0s" })} lang="en">
+  <BaseHead
+    title={title}
+    description={description}
+    isBlog={isBlog}
+    minRead={minRead}
+  />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content={description} />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="generator" content={Astro.generator} />
+  <title>
+    {title ? `${title} - Christopher Ehrlich` : "Christopher Ehrlich"}
+  </title>
+  <ThemeToggleInline />
+
   <body
     class="w-screen!important max-w-screen flex min-h-screen flex-col items-center bg-background p-4 pb-16 text-text transition-colors duration-300 md:pt-8"
   >
