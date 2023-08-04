@@ -3,7 +3,7 @@
 - [ ] Decide how to present work (mix projects / oss? etc)
 - [ ] Write better intro
 - [ ] Style code blocks
-- [ ] ThemeToggle shouldn't flash in (can we make it part of the initial render?)
+- [x] ThemeToggle shouldn't flash in (can we make it part of the initial render?)
 
 ## DONE
 

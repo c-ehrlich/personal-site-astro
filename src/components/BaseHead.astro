@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 export interface Props {
   title: string;
   description: string;
@@ -45,3 +47,5 @@ const image = new URL(
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={image} />
+
+<ViewTransitions />

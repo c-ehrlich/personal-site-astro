@@ -41,7 +41,7 @@ const {
     <ThemeToggleInline />
   </head>
   <body
-    class="flex min-h-screen w-screen!important max-w-screen flex-col items-center bg-background p-4 pb-16 text-text transition-colors duration-300 md:pt-8"
+    class="w-screen!important max-w-screen flex min-h-screen flex-col items-center bg-background p-4 pb-16 text-text transition-colors duration-300 md:pt-8"
   >
     <div class="flex w-full max-w-3xl flex-col gap-4">
       <div class="flex w-full justify-between">
@@ -55,12 +55,12 @@ const {
             quality={70}
           />
         </a>
-        <ThemeToggle client:only="solid-js" />
+        <ThemeToggle client:only="solid-js" transition:persist />
       </div>
       <h1 class="font-serif text-3xl font-semibold text-text">
         Christopher Ehrlich
       </h1>
-      <ul class="flex list-none gap-4 items-center font-bold uppercase">
+      <ul class="flex list-none items-center gap-4 font-bold uppercase">
         <li><a href="/">Home</a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/contact">Contact</a></li>
