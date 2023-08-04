@@ -10,8 +10,12 @@
 ---
 
 <script is:inline>
-  const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+if (!window.theme) {
+  window.theme = (() => {
+    if (
+      typeof localStorage !== "undefined" &&
+      localStorage.getItem("theme")
+    ) {
       const themeMaybe = localStorage.getItem("theme");
       if (themeMaybe === "light" || themeMaybe === "dark") {
         return themeMaybe;
@@ -23,11 +27,12 @@
     }
     return "light";
   })();
+}
 
-  if (theme === "light") {
-    document.documentElement.classList.remove("dark");
-  } else {
-    document.documentElement.classList.add("dark");
-  }
-  window.localStorage.setItem("theme", theme);
+if (window.theme === "light") {
+  document.documentElement.classList.remove("dark");
+} else {
+  document.documentElement.classList.add("dark");
+}
+window.localStorage.setItem("theme", window.theme);
 </script>
