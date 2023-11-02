@@ -272,6 +272,27 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "bookNotes": {
+"confessions-of-a-public-speaker.md": {
+	id: "confessions-of-a-public-speaker.md";
+  slug: "confessions-of-a-public-speaker";
+  body: string;
+  collection: "bookNotes";
+  data: InferEntrySchema<"bookNotes">
+} & { render(): Render[".md"] };
+"how-to-write-and-deliver-talks.md": {
+	id: "how-to-write-and-deliver-talks.md";
+  slug: "how-to-write-and-deliver-talks";
+  body: string;
+  collection: "bookNotes";
+  data: InferEntrySchema<"bookNotes">
+} & { render(): Render[".md"] };
+"thinking-in-bets.md": {
+	id: "thinking-in-bets.md";
+  slug: "thinking-in-bets";
+  body: string;
+  collection: "bookNotes";
+  data: InferEntrySchema<"bookNotes">
+} & { render(): Render[".md"] };
 "人は聞き方が９割.md": {
 	id: "人は聞き方が９割.md";
   slug: "人は聞き方が９割";
@@ -281,6 +302,20 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "misc": {
+"edge.md": {
+	id: "edge.md";
+  slug: "edge";
+  body: string;
+  collection: "misc";
+  data: InferEntrySchema<"misc">
+} & { render(): Render[".md"] };
+"javascript-toys.md": {
+	id: "javascript-toys.md";
+  slug: "javascript-toys";
+  body: string;
+  collection: "misc";
+  data: InferEntrySchema<"misc">
+} & { render(): Render[".md"] };
 "trpc-viennajs.md": {
 	id: "trpc-viennajs.md";
   slug: "trpc-viennajs";
