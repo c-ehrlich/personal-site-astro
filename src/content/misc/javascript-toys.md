@@ -3,7 +3,7 @@ title: "The new toys JavaScript MIGHT get - Resources"
 ---
 
 ## Slides
-- [pdf](/public/slides/Christopher%20Ehrlich%20-%20New%20Toys.pdf)
+- [pdf](/slides/Christopher%20Ehrlich%20-%20New%20Toys.pdf)
 
 ## Proposals discussed
 
