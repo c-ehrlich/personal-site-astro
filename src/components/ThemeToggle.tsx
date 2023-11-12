@@ -3,7 +3,7 @@ import { Motion, Presence } from "@motionone/solid";
 
 /**
  * This has theme flash unless it is used together with
- * the `ThemeToggleInline` component.
+ * the `ThemeToggleInline` component and view transitions.
  */
 
 export function ThemeToggle() {
