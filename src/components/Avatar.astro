@@ -1,0 +1,21 @@
+---
+import { Image } from "@astrojs/image/components";
+import avatar from "../media/avatar.jpg";
+
+export interface Props {
+  pxSize: number;
+}
+
+const { pxSize } = Astro.props as Props;
+---
+
+<a href="/">
+  <Image
+    class={`rounded-full w-[${pxSize}px] h-[${pxSize}px]`}
+    src={avatar}
+    alt="Christopher Ehrlich Avatar"
+    width={200}
+    height={200}
+    quality={70}
+  />
+</a>
