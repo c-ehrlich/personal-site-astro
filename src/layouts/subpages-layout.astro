@@ -7,13 +7,13 @@ import Avatar from "../components/Avatar.astro";
 
 <SharedLayout>
   <div class="flex w-full flex-col items-center justify-center gap-4">
-    <div class="flex w-full justify-between">
+    <div class="flex w-full flex-col justify-between gap-4 xs:flex-row">
       <Avatar pxSize={40} />
       <HeaderLinks />
       <ThemeToggle client:only="solid-js" transition:persist />
     </div>
 
-    <div class="w-full max-w-4xl">
+    <div class="max-w-3xl">
       <slot />
     </div>
   </div>
