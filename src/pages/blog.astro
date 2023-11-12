@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import PostList from "../components/blog/PostList.astro";
-import Layout from "../layouts/Layout.astro";
+import IndexLayout from "../layouts/index-layout.astro";
 
 const postsUnsorted = await getCollection("blog");
 const posts = postsUnsorted.sort(
@@ -9,7 +9,7 @@ const posts = postsUnsorted.sort(
 );
 ---
 
-<Layout title="Blog">
+<IndexLayout title="Blog">
   <main class="flex flex-col gap-4">
     <div>
       <h2 class="text-4xl">Blog</h2>
@@ -19,4 +19,4 @@ const posts = postsUnsorted.sort(
     </div>
     <PostList posts={posts} />
   </main>
-</Layout>
+</IndexLayout>

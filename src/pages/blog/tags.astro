@@ -1,11 +1,11 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import IndexLayout from "../../layouts/index-layout.astro";
 import { createBlogTagListWithCount } from "../../util/blogTags";
 
 const tags = await createBlogTagListWithCount();
 ---
 
-<Layout title="Tags">
+<IndexLayout title="Tags">
   <h2 class="text-4xl">Tags</h2>
   <ul>
     {
@@ -21,4 +21,4 @@ const tags = await createBlogTagListWithCount();
       ))
     }
   </ul>
-</Layout>
+</IndexLayout>

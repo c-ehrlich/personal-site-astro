@@ -1,7 +1,7 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
 import PostList from "../../../components/blog/PostList.astro";
-import Layout from "../../../layouts/Layout.astro";
+import IndexLayout from "../../../layouts/index-layout.astro";
 import {
   BlogTagWithCount,
   createBlogTagListWithCount,
@@ -35,8 +35,8 @@ interface Props {
 const { tagWithCount, posts } = Astro.props;
 ---
 
-<Layout title={tagWithCount.tag}>
+<IndexLayout title={tagWithCount.tag}>
   <h2 class="text-4xl">{tagWithCount.tag}</h2>
   <p>{tagWithCount.count} {tagWithCount.count === 1 ? "post" : "posts"}</p>
   <PostList posts={posts} />
-</Layout>
+</IndexLayout>
