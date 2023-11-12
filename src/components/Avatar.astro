@@ -11,11 +11,12 @@ const { pxSize } = Astro.props as Props;
 
 <a href="/">
   <Image
-    class={`rounded-full w-[${pxSize}px] h-[${pxSize}px]`}
+    class="rounded-full"
+    style={{ width: `${pxSize}px`, height: `${pxSize}px` }}
     src={avatar}
     alt="Christopher Ehrlich Avatar"
-    width={200}
-    height={200}
+    width={2 * pxSize}
+    height={2 * pxSize}
     quality={70}
   />
 </a>
