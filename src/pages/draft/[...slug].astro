@@ -1,6 +1,6 @@
 ---
 import { getCollection, CollectionEntry } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
+import SubpagesLayout from "../../layouts/subpages-layout.astro";
 import { readTime } from "../../util/readTime";
 
 export async function getStaticPaths() {
@@ -21,7 +21,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout
+<SubpagesLayout
   title={entry.data.title}
   description={entry.data.description}
   isBlog={true}
@@ -30,6 +30,6 @@ const { Content } = await entry.render();
   <article>
     <h1>{entry.data.title}</h1>
     <Content />
-    <p class="mt-4"><a href="/blog">← Back to blog</a></p>
+    <p class="mt-4"><a href="/content">← Back to index</a></p>
   </article>
-</Layout>
+</SubpagesLayout>

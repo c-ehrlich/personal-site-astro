@@ -9,6 +9,9 @@ module.exports = {
         text: "hsl(var(--color-text) / <alpha-value>)",
         link: "hsl(var(--color-link) / <alpha-value>)",
       },
+      screens: {
+        xs: "375px", // iPhone SE 2020
+      },
     },
   },
   plugins: [],

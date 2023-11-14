@@ -1,0 +1,22 @@
+---
+import { ThemeToggle } from "../components/ThemeToggle";
+import SharedLayout from "./shared-layout.astro";
+import HeaderLinks from "../components/header-links.astro";
+import Avatar from "../components/Avatar.astro";
+---
+
+<SharedLayout>
+  <div class="flex w-full max-w-3xl flex-col gap-4">
+    <div class="flex w-full justify-between">
+      <Avatar pxSize={100} />
+      <ThemeToggle client:only="solid-js" transition:persist />
+    </div>
+    <h1 class="font-serif text-3xl font-semibold text-text">
+      Christopher Ehrlich
+    </h1>
+
+    <HeaderLinks />
+
+    <slot />
+  </div>
+</SharedLayout>

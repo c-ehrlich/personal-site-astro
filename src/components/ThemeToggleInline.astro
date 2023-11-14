@@ -10,29 +10,24 @@
 ---
 
 <script is:inline>
-if (!window.theme) {
-  window.theme = (() => {
-    if (
-      typeof localStorage !== "undefined" &&
-      localStorage.getItem("theme")
-    ) {
-      const themeMaybe = localStorage.getItem("theme");
+  const THEME_KEY = "cje-theme";
+
+  if (typeof localStorage !== "undefined") {
+    function getTheme() {
+      const themeMaybe = localStorage.getItem(THEME_KEY);
       if (themeMaybe === "light" || themeMaybe === "dark") {
         return themeMaybe;
       }
       return "light";
-    }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
-  })();
-}
 
-if (window.theme === "light") {
-  document.documentElement.classList.remove("dark");
-} else {
-  document.documentElement.classList.add("dark");
-}
-window.localStorage.setItem("theme", window.theme);
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+
+      return "light";
+    }
+
+    const theme = getTheme();
+    document.documentElement.classList.add(theme);
+  }
 </script>

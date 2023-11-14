@@ -1,9 +1,9 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
-import PostList from "../../../components/blog/PostList.astro";
-import Layout from "../../../layouts/Layout.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+import PostList from "../../../components/content/PostList.astro";
+import SubpagesLayout from "../../../layouts/subpages-layout.astro";
 import {
-  BlogTagWithCount,
+  type BlogTagWithCount,
   createBlogTagListWithCount,
 } from "../../../util/blogTags";
 
@@ -35,8 +35,8 @@ interface Props {
 const { tagWithCount, posts } = Astro.props;
 ---
 
-<Layout title={tagWithCount.tag}>
+<SubpagesLayout title={tagWithCount.tag}>
   <h2 class="text-4xl">{tagWithCount.tag}</h2>
   <p>{tagWithCount.count} {tagWithCount.count === 1 ? "post" : "posts"}</p>
   <PostList posts={posts} />
-</Layout>
+</SubpagesLayout>

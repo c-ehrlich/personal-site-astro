@@ -11,7 +11,7 @@ tags:
 
 I gave my first talk at a meetup this week, talking about tRPC at ViennaJS.
 
-![Christopher Ehrlich presenting at ViennaJS](/img/blog/trpc-viennajs/trpc-viennajs.jpg)
+![Christopher Ehrlich presenting at ViennaJS](/img/content/trpc-viennajs/trpc-viennajs.jpg)
 
 <p class="caption">...if you have, you might like tRPC</p>
 

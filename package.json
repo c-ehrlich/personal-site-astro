@@ -13,26 +13,25 @@
     "format:check": "prettier --check --plugin-search-dir=. **/*.{cjs,mjs,ts,tsx,md,json,astro}"
   },
   "dependencies": {
-    "@astrojs/image": "^0.13.0",
-    "@astrojs/mdx": "^0.17.2",
-    "@astrojs/solid-js": "^1.2.3",
-    "@motionone/solid": "^10.15.4",
+    "@astrojs/mdx": "^1.1.5",
+    "@astrojs/solid-js": "^3.0.2",
+    "@motionone/solid": "^10.15.5",
     "reading-time": "^1.5.0",
-    "solid-js": "^1.4.3"
+    "solid-js": "^1.8.5"
   },
   "devDependencies": {
-    "@astrojs/rss": "^2.0.0",
-    "@astrojs/tailwind": "^3.0.0",
-    "@types/sharp": "^0.31.1",
+    "@astrojs/rss": "^3.0.0",
+    "@astrojs/tailwind": "^5.0.2",
     "@typescript-eslint/parser": "^5.47.1",
-    "astro": "^2.10.7",
-    "eslint": "^8.30.0",
-    "eslint-plugin-astro": "^0.21.1",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "prettier": "^2.8.1",
-    "prettier-plugin-astro": "^0.7.0",
-    "prettier-plugin-tailwindcss": "^0.2.1",
-    "sharp": "^0.31.3",
-    "tailwindcss": "^3.2.4"
+    "astro": "^3.5.4",
+    "eslint": "^8.53.0",
+    "eslint-plugin-astro": "^0.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-astro": "^0.12.2",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "sharp": "^0.32.6",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2"
   }
 }

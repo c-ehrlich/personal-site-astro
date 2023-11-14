@@ -1,0 +1,48 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import "../styles/global.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  isBlog?: boolean;
+  minRead?: string | undefined;
+}
+
+const {
+  title = "Christopher Ehrlich",
+  description = "Teacher turned developer. Create T3 App, tRPC, etc.",
+  isBlog = false,
+  minRead,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <BaseHead
+    title={title}
+    description={description}
+    isBlog={isBlog}
+    minRead={minRead}
+  />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content={description} />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="generator" content={Astro.generator} />
+  <title>
+    {title ? `${title} - Christopher Ehrlich` : "Christopher Ehrlich"}
+  </title>
+
+  <body
+    class="w-screen!important max-w-screen flex min-h-screen flex-col items-center bg-background p-4 pb-16 text-text transition-colors duration-300 sm:p-8"
+  >
+    <slot />
+  </body>
+<!-- 
+  <style>
+    *: {
+      transition: all ease-in-out 0.25s;
+    }
+  </style> -->
+</html>

@@ -1,0 +1,22 @@
+---
+import { ThemeToggle } from "../components/ThemeToggle";
+import SharedLayout from "./shared-layout.astro";
+import HeaderLinks from "../components/header-links.astro";
+import Avatar from "../components/Avatar.astro";
+---
+
+<SharedLayout>
+  <div class="flex w-full flex-col items-center justify-center gap-4">
+    <div class="flex w-full flex-col justify-between gap-4 xs:flex-row">
+      <Avatar pxSize={40} />
+      <HeaderLinks />
+      <div class="w-8">
+        <ThemeToggle client:only="solid-js" transition:persist />
+      </div>
+    </div>
+
+    <div class="w-full max-w-2xl">
+      <slot />
+    </div>
+  </div>
+</SharedLayout>

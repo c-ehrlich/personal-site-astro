@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import { Image } from "@astrojs/image/components";
-import Layout from "../layouts/Layout.astro";
+import SubpagesLayout from "../layouts/subpages-layout.astro";
 import Pill from "../components/Pill.astro";
+import { Image } from "astro:assets";
 
 const projectsUnsorted = await getCollection("projects");
 const projects = projectsUnsorted.sort(
@@ -11,7 +11,7 @@ const projects = projectsUnsorted.sort(
 );
 ---
 
-<Layout title="Projects - Christopher Ehrlich">
+<SubpagesLayout title="Projects - Christopher Ehrlich">
   <main>
     <h2 class="mb-4 text-4xl">Projects</h2>
     <ul class="flex flex-col gap-16">
@@ -55,4 +55,4 @@ const projects = projectsUnsorted.sort(
       }
     </ul>
   </main>
-</Layout>
+</SubpagesLayout>

@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import ThemeToggleInline from "./ThemeToggleInline.astro";
 
 export interface Props {
   title: string;
@@ -48,4 +48,5 @@ const image = new URL(
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={image} />
 
-<ViewTransitions />
+
+<ThemeToggleInline />

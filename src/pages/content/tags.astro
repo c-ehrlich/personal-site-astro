@@ -1,17 +1,17 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import SubpagesLayout from "../../layouts/subpages-layout.astro";
 import { createBlogTagListWithCount } from "../../util/blogTags";
 
 const tags = await createBlogTagListWithCount();
 ---
 
-<Layout title="Tags">
+<SubpagesLayout title="Tags">
   <h2 class="text-4xl">Tags</h2>
   <ul>
     {
       tags.map((tag) => (
         <li>
-          <a class="font-semibold" href={`/blog/tag/${tag.tag}`}>
+          <a class="font-semibold" href={`/content/tag/${tag.tag}`}>
             {tag.tag}
           </a>{" "}
           <span class="text-text/60">
@@ -21,4 +21,4 @@ const tags = await createBlogTagListWithCount();
       ))
     }
   </ul>
-</Layout>
+</SubpagesLayout>
