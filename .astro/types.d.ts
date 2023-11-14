@@ -1,5 +1,15 @@
 declare module 'astro:content' {
 	interface Render {
+		'.mdx': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+		}>;
+	}
+}
+
+declare module 'astro:content' {
+	interface Render {
 		'.md': Promise<{
 			Content: import('astro').MarkdownInstance<{}>['Content'];
 			headings: import('astro').MarkdownHeading[];
@@ -12,26 +22,12 @@ declare module 'astro:content' {
 	export { z } from 'astro/zod';
 
 	type Flatten<T> = T extends { [K: string]: infer U } ? U : never;
-	export type CollectionEntry<C extends keyof AnyEntryMap> = Flatten<AnyEntryMap[C]>;
 
-	// TODO: Remove this when having this fallback is no longer relevant. 2.3? 3.0? - erika, 2023-04-04
-	/**
-	 * @deprecated
-	 * `astro:content` no longer provide `image()`.
-	 *
-	 * Please use it through `schema`, like such:
-	 * ```ts
-	 * import { defineCollection, z } from "astro:content";
-	 *
-	 * defineCollection({
-	 *   schema: ({ image }) =>
-	 *     z.object({
-	 *       image: image(),
-	 *     }),
-	 * });
-	 * ```
-	 */
-	export const image: never;
+	export type CollectionKey = keyof AnyEntryMap;
+	export type CollectionEntry<C extends CollectionKey> = Flatten<AnyEntryMap[C]>;
+
+	export type ContentCollectionKey = keyof ContentEntryMap;
+	export type DataCollectionKey = keyof DataEntryMap;
 
 	// This needs to be in sync with ImageMetadata
 	export type ImageFunction = () => import('astro/zod').ZodObject<{
@@ -46,19 +42,17 @@ declare module 'astro:content' {
 				import('astro/zod').ZodLiteral<'tiff'>,
 				import('astro/zod').ZodLiteral<'webp'>,
 				import('astro/zod').ZodLiteral<'gif'>,
-				import('astro/zod').ZodLiteral<'svg'>
+				import('astro/zod').ZodLiteral<'svg'>,
+				import('astro/zod').ZodLiteral<'avif'>,
 			]
 		>;
 	}>;
 
 	type BaseSchemaWithoutEffects =
 		| import('astro/zod').AnyZodObject
-		| import('astro/zod').ZodUnion<import('astro/zod').AnyZodObject[]>
+		| import('astro/zod').ZodUnion<[BaseSchemaWithoutEffects, ...BaseSchemaWithoutEffects[]]>
 		| import('astro/zod').ZodDiscriminatedUnion<string, import('astro/zod').AnyZodObject[]>
-		| import('astro/zod').ZodIntersection<
-				import('astro/zod').AnyZodObject,
-				import('astro/zod').AnyZodObject
-		  >;
+		| import('astro/zod').ZodIntersection<BaseSchemaWithoutEffects, BaseSchemaWithoutEffects>;
 
 	type BaseSchema =
 		| BaseSchemaWithoutEffects
@@ -89,7 +83,7 @@ declare module 'astro:content' {
 
 	export function getEntryBySlug<
 		C extends keyof ContentEntryMap,
-		E extends ValidContentEntrySlug<C> | (string & {})
+		E extends ValidContentEntrySlug<C> | (string & {}),
 	>(
 		collection: C,
 		// Note that this has to accept a regular string too, for SSR
@@ -114,7 +108,7 @@ declare module 'astro:content' {
 
 	export function getEntry<
 		C extends keyof ContentEntryMap,
-		E extends ValidContentEntrySlug<C> | (string & {})
+		E extends ValidContentEntrySlug<C> | (string & {}),
 	>(entry: {
 		collection: C;
 		slug: E;
@@ -123,7 +117,7 @@ declare module 'astro:content' {
 		: Promise<CollectionEntry<C> | undefined>;
 	export function getEntry<
 		C extends keyof DataEntryMap,
-		E extends keyof DataEntryMap[C] | (string & {})
+		E extends keyof DataEntryMap[C] | (string & {}),
 	>(entry: {
 		collection: C;
 		id: E;
@@ -132,7 +126,7 @@ declare module 'astro:content' {
 		: Promise<CollectionEntry<C> | undefined>;
 	export function getEntry<
 		C extends keyof ContentEntryMap,
-		E extends ValidContentEntrySlug<C> | (string & {})
+		E extends ValidContentEntrySlug<C> | (string & {}),
 	>(
 		collection: C,
 		slug: E
@@ -141,7 +135,7 @@ declare module 'astro:content' {
 		: Promise<CollectionEntry<C> | undefined>;
 	export function getEntry<
 		C extends keyof DataEntryMap,
-		E extends keyof DataEntryMap[C] | (string & {})
+		E extends keyof DataEntryMap[C] | (string & {}),
 	>(
 		collection: C,
 		id: E
@@ -190,7 +184,171 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		
+		"blog": {
+"advanced-trpc.md": {
+	id: "advanced-trpc.md";
+  slug: "advanced-trpc";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"contributing-to-oss.md": {
+	id: "contributing-to-oss.md";
+  slug: "contributing-to-oss";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"jutanium-stream.md": {
+	id: "jutanium-stream.md";
+  slug: "jutanium-stream";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"next-hydration-error.md": {
+	id: "next-hydration-error.md";
+  slug: "next-hydration-error";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"next-is-an-spa.md": {
+	id: "next-is-an-spa.md";
+  slug: "next-is-an-spa";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"react-query-patterns.md": {
+	id: "react-query-patterns.md";
+  slug: "react-query-patterns";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"ryan-carniato-stream.md": {
+	id: "ryan-carniato-stream.md";
+  slug: "ryan-carniato-stream";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"trpc-data-flows.md": {
+	id: "trpc-data-flows.md";
+  slug: "trpc-data-flows";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"typescript.md": {
+	id: "typescript.md";
+  slug: "typescript";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"viennajs-trpc.md": {
+	id: "viennajs-trpc.md";
+  slug: "viennajs-trpc";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+};
+"blog-draft": {
+"rsc.md": {
+	id: "rsc.md";
+  slug: "rsc";
+  body: string;
+  collection: "blog-draft";
+  data: any
+} & { render(): Render[".md"] };
+};
+"bookNotes": {
+"confessions-of-a-public-speaker.md": {
+	id: "confessions-of-a-public-speaker.md";
+  slug: "confessions-of-a-public-speaker";
+  body: string;
+  collection: "bookNotes";
+  data: InferEntrySchema<"bookNotes">
+} & { render(): Render[".md"] };
+"how-to-write-and-deliver-talks.md": {
+	id: "how-to-write-and-deliver-talks.md";
+  slug: "how-to-write-and-deliver-talks";
+  body: string;
+  collection: "bookNotes";
+  data: InferEntrySchema<"bookNotes">
+} & { render(): Render[".md"] };
+"thinking-in-bets.md": {
+	id: "thinking-in-bets.md";
+  slug: "thinking-in-bets";
+  body: string;
+  collection: "bookNotes";
+  data: InferEntrySchema<"bookNotes">
+} & { render(): Render[".md"] };
+"人は聞き方が９割.md": {
+	id: "人は聞き方が９割.md";
+  slug: "人は聞き方が９割";
+  body: string;
+  collection: "bookNotes";
+  data: InferEntrySchema<"bookNotes">
+} & { render(): Render[".md"] };
+};
+"misc": {
+"edge.md": {
+	id: "edge.md";
+  slug: "edge";
+  body: string;
+  collection: "misc";
+  data: InferEntrySchema<"misc">
+} & { render(): Render[".md"] };
+"javascript-toys.md": {
+	id: "javascript-toys.md";
+  slug: "javascript-toys";
+  body: string;
+  collection: "misc";
+  data: InferEntrySchema<"misc">
+} & { render(): Render[".md"] };
+"trpc-viennajs.md": {
+	id: "trpc-viennajs.md";
+  slug: "trpc-viennajs";
+  body: string;
+  collection: "misc";
+  data: InferEntrySchema<"misc">
+} & { render(): Render[".md"] };
+};
+"projects": {
+"Anket.md": {
+	id: "Anket.md";
+  slug: "anket";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"CreateT3App.md": {
+	id: "CreateT3App.md";
+  slug: "createt3app";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"UI.md": {
+	id: "UI.md";
+  slug: "ui";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"Vocab.md": {
+	id: "Vocab.md";
+  slug: "vocab";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+};
+
 	};
 
 	type DataEntryMap = {
@@ -199,5 +357,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = never;
+	type ContentConfig = typeof import("../src/content/config");
 }
