@@ -10,7 +10,9 @@ import Avatar from "../components/Avatar.astro";
     <div class="flex w-full flex-col justify-between gap-4 xs:flex-row">
       <Avatar pxSize={40} />
       <HeaderLinks />
-      <ThemeToggle client:only="solid-js" transition:persist />
+      <div class="w-8">
+        <ThemeToggle client:only="solid-js" transition:persist />
+      </div>
     </div>
 
     <div class="max-w-3xl">
