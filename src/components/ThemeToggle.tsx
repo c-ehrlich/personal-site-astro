@@ -1,5 +1,6 @@
 import { createEffect, createSignal, type JSX, Switch, Match } from "solid-js";
-import { Motion, Presence } from "@motionone/solid";
+// @ts-expect-error - @motionone/solid has messed up types
+import { Presence, Motion } from "@motionone/solid";
 
 const THEME_KEY = "cje-theme";
 
