@@ -1,5 +1,7 @@
-import { createEffect, createSignal, JSX, Switch, Match } from "solid-js";
+import { createEffect, createSignal, type JSX, Switch, Match } from "solid-js";
 import { Motion, Presence } from "@motionone/solid";
+
+const THEME_KEY = "cje-theme";
 
 /**
  * This has theme flash unless it is used together with
@@ -7,21 +9,26 @@ import { Motion, Presence } from "@motionone/solid";
  */
 
 export function ThemeToggle() {
-  const [theme, setTheme] = createSignal(localStorage.getItem("theme"));
+  const theme1 = localStorage.getItem(THEME_KEY);
+  const [theme, setTheme] = createSignal(theme1);
 
   createEffect(() => {
     if (theme()) {
-      localStorage.setItem("theme", theme() || "dark");
       if (theme() === "light") {
+        document.documentElement.classList.add("light");
         document.documentElement.classList.remove("dark");
       } else {
+        document.documentElement.classList.remove("light");
         document.documentElement.classList.add("dark");
       }
     }
   });
 
   function handleSwitchTheme() {
-    setTheme(theme() === "light" ? "dark" : "light");
+    const oldTheme = theme();
+    const newTheme = oldTheme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem(THEME_KEY, newTheme);
   }
 
   return (

@@ -19,7 +19,7 @@ const {
 } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html transition:animate={fade({ duration: "0.0s" })} lang="en">
   <BaseHead
     title={title}
@@ -35,7 +35,6 @@ const {
   <title>
     {title ? `${title} - Christopher Ehrlich` : "Christopher Ehrlich"}
   </title>
-  <ThemeToggleInline />
 
   <body
     class="w-screen!important max-w-screen flex min-h-screen flex-col items-center bg-background p-4 pb-16 text-text transition-colors duration-300 sm:p-8"

@@ -1,5 +1,10 @@
 ## TODO
 
+- [ ] FIRST THINGS FIRST: fix astro 3.0 regressions
+  - [x] theme flash
+  - [x] theme toggle
+  - [ ] blog is broken
+  - [ ] get view transitions working again without breaking themetoggle
 - [ ] Layout animations between index and other pages?
 - [ ] revise "content" section
   - [ ] each post gets "type" in frontmatter (talk, video, podcast, writing)
