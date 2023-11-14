@@ -1,7 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import "../styles/global.css";
-import { fade } from "astro:transitions";
 
 export interface Props {
   title?: string;
@@ -19,7 +18,7 @@ const {
 ---
 
 <!doctype html>
-<html transition:animate={fade({ duration: "0.0s" })} lang="en">
+<html lang="en">
   <BaseHead
     title={title}
     description={description}
@@ -40,4 +39,10 @@ const {
   >
     <slot />
   </body>
+<!-- 
+  <style>
+    *: {
+      transition: all ease-in-out 0.25s;
+    }
+  </style> -->
 </html>
