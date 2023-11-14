@@ -3,7 +3,8 @@
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "strictNullChecks": true,
-    "types": ["@astrojs/image/client"]
   }
 }
