@@ -9,7 +9,7 @@ tags:
 
 I recently had the immense privilege of taking part in a panel about TypeScript together with [Tejas Kumar](https://twitter.com/TejasKumar_), [Sara Vieira](https://twitter.com/NikkitaFTW), and [Kent C Dodds](https://twitter.com/kentcdodds/) at [AgentConf](https://www.alpine-conferences.com/agent-conf-2023/). The entire conference was wonderful and deserves an article of its own, but I wanted to start with an article about this panel.
 
-![Look mom, I'm on stage!](/img/blog/typescript/panel.jpg)
+![Look mom, I'm on stage!](/img/content/typescript/panel.jpg)
 
 <p class="caption">Look mom, I'm on stage!</p>
 

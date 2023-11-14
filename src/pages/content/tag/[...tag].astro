@@ -1,9 +1,9 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
-import PostList from "../../../components/blog/PostList.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+import PostList from "../../../components/content/PostList.astro";
 import SubpagesLayout from "../../../layouts/subpages-layout.astro";
 import {
-  BlogTagWithCount,
+  type BlogTagWithCount,
   createBlogTagListWithCount,
 } from "../../../util/blogTags";
 

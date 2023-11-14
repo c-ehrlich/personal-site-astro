@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import PostList from "../components/blog/PostList.astro";
+import PostList from "../components/content/PostList.astro";
 import SubpagesLayout from "../layouts/subpages-layout.astro";
 
 const postsUnsorted = await getCollection("blog");
@@ -12,8 +12,8 @@ const posts = postsUnsorted.sort(
 <SubpagesLayout title="Blog">
   <main class="flex flex-col gap-4">
     <div>
-      <h2 class="text-4xl">Blog</h2>
-      <a href="/blog/tags">View all tags</a> • <a href="/blog/rss.xml"
+      <h2 class="text-4xl">Content</h2>
+      <a href="/content/tags">View all tags</a> • <a href="/content/rss.xml"
         >RSS Feed</a
       >
     </div>

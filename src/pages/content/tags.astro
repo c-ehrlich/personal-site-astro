@@ -11,7 +11,7 @@ const tags = await createBlogTagListWithCount();
     {
       tags.map((tag) => (
         <li>
-          <a class="font-semibold" href={`/blog/tag/${tag.tag}`}>
+          <a class="font-semibold" href={`/content/tag/${tag.tag}`}>
             {tag.tag}
           </a>{" "}
           <span class="text-text/60">
