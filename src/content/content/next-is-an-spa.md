@@ -18,7 +18,7 @@ New video about a common misconception that people have about Next.js. I found t
   <iframe
     width="100%"
     height="900px"
-    src="https://www.youtube.com/watch?v=DWRq1nRPUMs
+    src="https://www.youtube.com/watch?v=DWRq1nRPUMs"
     frameborder="0"
     allow="accelerometer; 
     autoplay; 
