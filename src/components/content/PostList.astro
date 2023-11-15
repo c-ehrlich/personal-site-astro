@@ -8,7 +8,7 @@ interface Props {
   posts: Array<CollectionEntry<"content">>;
 }
 
-const { posts } = Astro.props;
+const { posts }: Props = Astro.props;
 ---
 
 <ul class="flex flex-col gap-6">

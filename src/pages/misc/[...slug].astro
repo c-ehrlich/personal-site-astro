@@ -17,14 +17,11 @@ interface Props {
   entry: CollectionEntry<"misc">;
 }
 
-const { entry } = Astro.props;
+const { entry }: Props = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout
-  title={entry.data.title}
-  isBlog={true}
->
+<Layout title={entry.data.title} isBlog={true}>
   <article>
     <h1>{entry.data.title}</h1>
     <Content />

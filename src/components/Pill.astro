@@ -5,7 +5,7 @@ export interface Props {
   // TODO: type this based on content collections?
   resource?: string;
 }
-const { tag, hashtag = false, resource = null } = Astro.props;
+const { tag, hashtag = false, resource }: Props = Astro.props;
 ---
 
 <a

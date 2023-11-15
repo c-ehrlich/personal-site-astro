@@ -17,7 +17,7 @@ interface Props {
   entry: CollectionEntry<"blog-draft">;
 }
 
-const { entry } = Astro.props;
+const { entry }: Props = Astro.props;
 const { Content } = await entry.render();
 ---
 

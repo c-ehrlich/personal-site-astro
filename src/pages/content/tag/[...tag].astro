@@ -32,7 +32,7 @@ interface Props {
   posts: Array<CollectionEntry<"content">>;
 }
 
-const { tagWithCount, posts } = Astro.props;
+const { tagWithCount, posts }: Props = Astro.props;
 ---
 
 <Layout title={tagWithCount.tag}>
