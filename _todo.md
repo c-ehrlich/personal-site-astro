@@ -1,5 +1,9 @@
 ## TODO
 
+- [ ] code / content / contact
+  - [x] code ref: https://personal-site-astro-o5tmc6mk7-c-ehrlich.vercel.app/code
+  - [ ] content is split into talks/writing/youtube/appearances
+  - [ ] filter, and a lucide icon for each
 - [ ] Decide how to present work (mix projects / oss? etc)
 - [ ] Write better intro
 - [ ] Style code blocks
