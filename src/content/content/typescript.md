@@ -1,5 +1,6 @@
 ---
 title: "The case for teaching in TypeScript"
+type: "article"
 description: "Thinking back on my AgentConf appearance"
 published: 2023/03/01
 updated: 2023/03/01

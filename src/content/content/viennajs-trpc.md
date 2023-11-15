@@ -1,5 +1,6 @@
 ---
 title: Talking tRPC at ViennaJS
+type: "talk"
 description: We also talked about education, abstraction and practicality, dx, open source, and much more
 published: 2023/03/28
 updated: 2023/03/28

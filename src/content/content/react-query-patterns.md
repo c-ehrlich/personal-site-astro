@@ -1,5 +1,6 @@
 ---
 title: Writing clean React Query code
+type: "article"
 description: Patterns to improve your frontend codebase
 published: 2022/05/28
 tags:

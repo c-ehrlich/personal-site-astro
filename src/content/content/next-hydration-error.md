@@ -1,5 +1,6 @@
 ---
 title: LocalStorage and Hydration errors in Next.js
+type: "article"
 description: Solving a common frustration
 published: 2022/03/20
 tags:

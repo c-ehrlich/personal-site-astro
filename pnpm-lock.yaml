@@ -17,6 +17,9 @@ dependencies:
   '@motionone/solid':
     specifier: ^10.15.4
     version: 10.15.4(solid-js@1.6.6)
+  lucide-astro:
+    specifier: ^0.292.0
+    version: 0.292.0(astro@2.10.7)
   reading-time:
     specifier: ^1.5.0
     version: 1.5.0
@@ -3105,6 +3108,14 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+
+  /lucide-astro@0.292.0(astro@2.10.7):
+    resolution: {integrity: sha512-+vt/4kVEDZLdid7sTQTLTgbs1ohamWPqxsR2pWYVnXNHxPWikIntSsLOSVD5JDfMrh7jmo1ifqMTfXscLT4+gA==}
+    peerDependencies:
+      astro: ^2.7.1 || ^3.0.0
+    dependencies:
+      astro: 2.10.7(sharp@0.31.3)
+    dev: false
 
   /magic-string@0.27.0:
     resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}

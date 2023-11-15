@@ -1,0 +1,43 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { MessagesSquare, Mic2, PenLine, Youtube } from "lucide-astro";
+
+interface Props {
+  type: CollectionEntry<"content">["data"]["type"];
+}
+
+const { type }: Props = Astro.props;
+---
+
+{
+  () => {
+    switch (type) {
+      case "article":
+        return (
+          <div class="pb-1">
+            <PenLine class="h-[18px] w-[18px] text-text" />
+          </div>
+        );
+      case "talk":
+        return (
+          <div class="pb-1">
+            <Mic2 class="h-[18px] w-[18px] text-text" />
+          </div>
+        );
+      case "video":
+        return (
+          <div class="w-[18px] pb-1">
+            <Youtube class="h-5 w-5 text-text" />
+          </div>
+        );
+      case "appearance":
+        return (
+          <div class="pb-1">
+            <MessagesSquare class="h-[18px] w-[18px] text-text" />
+          </div>
+        );
+      default:
+        throw new Error("Invalid type");
+    }
+  }
+}

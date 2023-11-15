@@ -17,6 +17,7 @@ export const OPEN_GRAPH = {
 const contentCollection = defineCollection({
   schema: z.object({
     title: z.string().min(1),
+    type: z.enum(["article", "talk", "video", "appearance"]),
     description: z.string().min(1),
     published: z
       .string()

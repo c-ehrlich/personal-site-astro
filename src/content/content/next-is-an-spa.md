@@ -1,5 +1,6 @@
 ---
 title: Next.js is an SPA
+type: "video"
 description: Fixing a common incorrect assumption
 published: 2023/03/15
 updated: 2022/03/15

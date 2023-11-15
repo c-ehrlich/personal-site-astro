@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import ContentLayout from "../../../layouts/ContentLayout.astro";
+
+export async function getStaticPaths() {
+  const docs = await getCollection("content");
+
+  return ["talk", "appearance", "article", "video"].map((type) => {
+    let header;
+    switch (type) {
+      case "talk":
+        header = "Talks";
+        break;
+      case "appearance":
+        header = "Appearances";
+        break;
+      case "article":
+        header = "Articles";
+        break;
+      case "video":
+        header = "Videos";
+        break;
+    }
+    return {
+      params: { slug: type },
+      props: {
+        header: header,
+        posts: docs.filter((doc) => doc.data.type === type),
+      },
+    };
+  });
+}
+
+const { header, posts } = Astro.props;
+---
+
+<ContentLayout header={header} posts={posts} />

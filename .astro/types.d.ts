@@ -230,6 +230,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "content": {
+"2023-edge-react-vienna.md": {
+	id: "2023-edge-react-vienna.md";
+  slug: "2023-edge-react-vienna";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
+} & { render(): Render[".md"] };
 "advanced-trpc.md": {
 	id: "advanced-trpc.md";
   slug: "advanced-trpc";
