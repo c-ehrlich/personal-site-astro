@@ -5,7 +5,7 @@ import type { CollectionEntry } from "astro:content";
 import { readTime } from "../../util/readTime";
 
 interface Props {
-  posts: Array<CollectionEntry<"blog">>;
+  posts: Array<CollectionEntry<"content">>;
 }
 
 const { posts } = Astro.props;
@@ -15,7 +15,7 @@ const { posts } = Astro.props;
   {
     posts.map((post) => (
       <li class="flex flex-col">
-        <a class="-mb-[2px] text-2xl" href={`/blog/${post.slug}`}>
+        <a class="-mb-[2px] text-2xl" href={`/content/${post.slug}`}>
           {post.data.title}
         </a>
         <p class="mb-1 text-sm">
@@ -25,7 +25,7 @@ const { posts } = Astro.props;
           {post.data.tags
             .sort((a, b) => a.localeCompare(b))
             .map((tag) => (
-              <Pill tag={tag} hashtag={true} resource="blog" />
+              <Pill tag={tag} hashtag={true} resource="content" />
             ))}
         </div>
       </li>

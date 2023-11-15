@@ -1,8 +1,8 @@
 import { getCollection } from "astro:content";
 
 export async function createBlogTagList() {
-  const allBlogPosts = await getCollection("blog");
-  const allTags = allBlogPosts.map((post) => post.data.tags).flat();
+  const allPosts = await getCollection("content");
+  const allTags = allPosts.map((post) => post.data.tags).flat();
   const uniqueTags = [...new Set(allTags)].sort((a, b) => a.localeCompare(b));
   return uniqueTags;
 }
@@ -15,7 +15,7 @@ export type BlogTagWithCount = {
 export async function createBlogTagListWithCount(): Promise<
   BlogTagWithCount[]
 > {
-  const allBlogPosts = await getCollection("blog");
+  const allBlogPosts = await getCollection("content");
   const allTags = allBlogPosts.map((post) => post.data.tags).flat();
   const tagsWithCountMap = new Map<string, number>();
   allTags.forEach((tag) => {

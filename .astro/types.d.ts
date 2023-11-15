@@ -190,79 +190,7 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"blog": {
-"advanced-trpc.md": {
-	id: "advanced-trpc.md";
-  slug: "advanced-trpc";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"contributing-to-oss.md": {
-	id: "contributing-to-oss.md";
-  slug: "contributing-to-oss";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"jutanium-stream.md": {
-	id: "jutanium-stream.md";
-  slug: "jutanium-stream";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"next-hydration-error.md": {
-	id: "next-hydration-error.md";
-  slug: "next-hydration-error";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"next-is-an-spa.md": {
-	id: "next-is-an-spa.md";
-  slug: "next-is-an-spa";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"react-query-patterns.md": {
-	id: "react-query-patterns.md";
-  slug: "react-query-patterns";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"ryan-carniato-stream.md": {
-	id: "ryan-carniato-stream.md";
-  slug: "ryan-carniato-stream";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"trpc-data-flows.md": {
-	id: "trpc-data-flows.md";
-  slug: "trpc-data-flows";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"typescript.md": {
-	id: "typescript.md";
-  slug: "typescript";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"viennajs-trpc.md": {
-	id: "viennajs-trpc.md";
-  slug: "viennajs-trpc";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-};
-"blog-draft": {
+		"blog-draft": {
 "rsc.md": {
 	id: "rsc.md";
   slug: "rsc";
@@ -299,6 +227,78 @@ declare module 'astro:content' {
   body: string;
   collection: "bookNotes";
   data: InferEntrySchema<"bookNotes">
+} & { render(): Render[".md"] };
+};
+"content": {
+"advanced-trpc.md": {
+	id: "advanced-trpc.md";
+  slug: "advanced-trpc";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
+} & { render(): Render[".md"] };
+"contributing-to-oss.md": {
+	id: "contributing-to-oss.md";
+  slug: "contributing-to-oss";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
+} & { render(): Render[".md"] };
+"jutanium-stream.md": {
+	id: "jutanium-stream.md";
+  slug: "jutanium-stream";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
+} & { render(): Render[".md"] };
+"next-hydration-error.md": {
+	id: "next-hydration-error.md";
+  slug: "next-hydration-error";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
+} & { render(): Render[".md"] };
+"next-is-an-spa.md": {
+	id: "next-is-an-spa.md";
+  slug: "next-is-an-spa";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
+} & { render(): Render[".md"] };
+"react-query-patterns.md": {
+	id: "react-query-patterns.md";
+  slug: "react-query-patterns";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
+} & { render(): Render[".md"] };
+"ryan-carniato-stream.md": {
+	id: "ryan-carniato-stream.md";
+  slug: "ryan-carniato-stream";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
+} & { render(): Render[".md"] };
+"trpc-data-flows.md": {
+	id: "trpc-data-flows.md";
+  slug: "trpc-data-flows";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
+} & { render(): Render[".md"] };
+"typescript.md": {
+	id: "typescript.md";
+  slug: "typescript";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
+} & { render(): Render[".md"] };
+"viennajs-trpc.md": {
+	id: "viennajs-trpc.md";
+  slug: "viennajs-trpc";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
 } & { render(): Render[".md"] };
 };
 "misc": {

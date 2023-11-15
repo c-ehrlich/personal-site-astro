@@ -1,15 +1,15 @@
 ---
 import { getCollection } from "astro:content";
-import PostList from "../components/blog/PostList.astro";
+import PostList from "../components/content/PostList.astro";
 import Layout from "../layouts/Layout.astro";
 
-const postsUnsorted = await getCollection("blog");
+const postsUnsorted = await getCollection("content");
 const posts = postsUnsorted.sort(
   (a, b) => b.data.published.getTime() - a.data.published.getTime(),
 );
 ---
 
-<Layout title="Blog">
+<Layout title="Content">
   <main class="flex flex-col gap-4">
     <div>
       <h2 class="text-4xl">Blog</h2>

@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import { readTime } from "../../util/readTime";
 
 export async function getStaticPaths() {
-  const docs = await getCollection("blog");
+  const docs = await getCollection("content");
   return docs.map((entry) => ({
     // Pass blog entry via props
     params: { slug: entry.slug },
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
 interface Props {
   // Optionally use `CollectionEntry` for type safety
-  entry: CollectionEntry<"blog">;
+  entry: CollectionEntry<"content">;
 }
 
 const { entry } = Astro.props;

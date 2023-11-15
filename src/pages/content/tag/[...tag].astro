@@ -1,6 +1,6 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
-import PostList from "../../../components/blog/PostList.astro";
+import PostList from "../../../components/content/PostList.astro";
 import Layout from "../../../layouts/Layout.astro";
 import {
   BlogTagWithCount,
@@ -9,7 +9,7 @@ import {
 
 export async function getStaticPaths() {
   const tagsWithCount = await createBlogTagListWithCount();
-  const posts = await getCollection("blog");
+  const posts = await getCollection("content");
   return tagsWithCount.map((tagWithCount) => ({
     params: {
       tag: tagWithCount.tag,
@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 
 interface Props {
   tagWithCount: BlogTagWithCount;
-  posts: Array<CollectionEntry<"blog">>;
+  posts: Array<CollectionEntry<"content">>;
 }
 
 const { tagWithCount, posts } = Astro.props;
