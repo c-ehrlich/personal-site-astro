@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Layout from "./Layout.astro";
+import PostList from "../components/content/PostList.astro";
+export interface Props {
+  header: string;
+  posts: Array<CollectionEntry<"content">>;
+}
+
+const { header, posts }: Props = Astro.props;
+---
+
+<Layout title="Content">
+  <main class="flex flex-col gap-4">
+    <h2 class="text-4xl">{header}</h2>
+    <p>
+      Filter: <a href="/content">all</a> • <a href="/content/category/blog"
+        >articles</a
+      > • <a href="/content/category/talk">talks</a> • <a
+        href="/content/category/video">videos</a
+      > • <a href="/content/category/appearance">guest appearances</a>
+    </p>
+    <span>
+      <a href="/giving-talks">I'm available for giving talks!</a>
+    </span>
+    <PostList posts={posts} />
+  </main>
+</Layout>

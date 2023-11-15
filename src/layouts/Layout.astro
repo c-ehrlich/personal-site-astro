@@ -19,7 +19,7 @@ const {
   description = "Teacher turned developer. Create T3 App, tRPC, etc.",
   isBlog = false,
   minRead,
-} = Astro.props;
+}: Props = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -41,7 +41,7 @@ const {
   <ThemeToggleInline />
 
   <body
-    class="w-screen!important max-w-screen flex min-h-screen flex-col items-center bg-background p-4 pb-16 text-text transition-colors duration-300 md:pt-8"
+    class="w-screen!important max-w-screen flex min-h-screen flex-col items-center bg-background p-4 pb-16 text-lg leading-snug text-text transition-colors duration-300 md:pt-8"
   >
     <div class="flex w-full max-w-3xl flex-col gap-4">
       <div class="flex w-full justify-between">
@@ -61,8 +61,8 @@ const {
         Christopher Ehrlich
       </h1>
       <ul class="flex list-none items-center gap-4 font-bold uppercase">
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog">Blog</a></li>
+        <li><a href="/code">Code</a></li>
+        <li><a href="/content">Content</a></li>
         <li><a href="/contact">Contact</a></li>
         <li>
           <a href="https://github.com/c-ehrlich" target="_blank"

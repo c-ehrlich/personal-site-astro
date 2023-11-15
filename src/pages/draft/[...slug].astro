@@ -17,7 +17,7 @@ interface Props {
   entry: CollectionEntry<"blog-draft">;
 }
 
-const { entry } = Astro.props;
+const { entry }: Props = Astro.props;
 const { Content } = await entry.render();
 ---
 
@@ -30,6 +30,6 @@ const { Content } = await entry.render();
   <article>
     <h1>{entry.data.title}</h1>
     <Content />
-    <p class="mt-4"><a href="/blog">← Back to blog</a></p>
+    <p class="mt-4"><a href="/content">← Back to index</a></p>
   </article>
 </Layout>

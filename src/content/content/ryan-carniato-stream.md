@@ -1,5 +1,6 @@
 ---
 title: Talking T3 with Ryan Carniato
+type: "appearance"
 description: We also talked about education, abstraction and practicality, dx, open source, and much more
 published: 2023/02/03
 updated: 2023/02/03

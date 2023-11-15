@@ -1,12 +1,19 @@
 ## TODO
 
-- [ ] Decide how to present work (mix projects / oss? etc)
 - [ ] Write better intro
-- [ ] Style code blocks
-- [x] ThemeToggle shouldn't flash in (can we make it part of the initial render?)
+- [ ] Styling (maybe pay someone to do this?)
+  - [ ] Better code blocks
+  - [ ] Better dark theme
+  - [ ] Better global css for articles
 
 ## DONE
 
+- [x] code / content / contact
+  - [x] code ref: https://personal-site-astro-o5tmc6mk7-c-ehrlich.vercel.app/code
+  - [x] content is split into talks/writing/youtube/appearances
+  - [x] filter, and a lucide icon for each
+- [x] Decide how to present work (mix projects / oss? etc)
+- [x] ThemeToggle shouldn't flash in (can we make it part of the initial render?)
 - [x] Styling (markdown)
 - [x] Logo
   - [x] not working on Vercel

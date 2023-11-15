@@ -1,5 +1,6 @@
 ---
 title: Talking tRPC at ViennaJS
+type: "talk"
 description: We also talked about education, abstraction and practicality, dx, open source, and much more
 published: 2023/03/28
 updated: 2023/03/28
@@ -11,7 +12,7 @@ tags:
 
 I gave my first talk at a meetup this week, talking about tRPC at ViennaJS.
 
-![Christopher Ehrlich presenting at ViennaJS](/img/blog/trpc-viennajs/trpc-viennajs.jpg)
+![Christopher Ehrlich presenting at ViennaJS](/img/content/trpc-viennajs/trpc-viennajs.jpg)
 
 <p class="caption">...if you have, you might like tRPC</p>
 

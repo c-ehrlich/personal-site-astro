@@ -1,5 +1,6 @@
 ---
 title: "Advanced tRPC - Callers, functions, and gSSP"
+type: "video"
 description: "How to call procedures from other procedures, how to structure a large tRPC backend, different ways of getting data from tRPC in getServerSideProps and when to use each one, and what Callers should actually be used for."
 published: 2023/01/31
 updated: 2023/01/31

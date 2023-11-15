@@ -1,5 +1,6 @@
 ---
 title: Talking tRPC and Docs with Dan Jutan
+type: "appearance"
 description: We also talked about education, abstraction and practicality, dx, open source, and much more
 published: 2023/04/11
 updated: 2023/04/11

@@ -6,7 +6,7 @@ const BLOG_DESCRIPTION =
   "I write about tech, education, OSS, and other things.";
 
 export async function get() {
-  const posts = await getCollection("blog");
+  const posts = await getCollection("content");
   const items = posts
     .sort(
       (a, b) =>

@@ -1,0 +1,11 @@
+---
+import { getCollection } from "astro:content";
+import ContentLayout from "../layouts/ContentLayout.astro";
+
+const postsUnsorted = await getCollection("content");
+const posts = postsUnsorted.sort(
+  (a, b) => b.data.published.getTime() - a.data.published.getTime(),
+);
+---
+
+<ContentLayout header="Content" posts={posts} />

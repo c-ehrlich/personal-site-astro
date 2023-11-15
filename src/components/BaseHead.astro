@@ -9,9 +9,10 @@ export interface Props {
   minRead?: string | undefined;
 }
 
-const { title, description, isBlog, minRead } = Astro.props;
+const { title, description, isBlog, minRead }: Props = Astro.props;
+
 const image = new URL(
-  Astro.props.isBlog
+  isBlog
     ? `https://og.c-ehrlich.dev/api/blog?input=${encodeURIComponent(
         JSON.stringify({
           title,

@@ -17,6 +17,7 @@
     "@astrojs/mdx": "^0.17.2",
     "@astrojs/solid-js": "^1.2.3",
     "@motionone/solid": "^10.15.4",
+    "lucide-astro": "^0.292.0",
     "reading-time": "^1.5.0",
     "solid-js": "^1.4.3"
   },

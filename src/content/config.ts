@@ -14,9 +14,10 @@ export const OPEN_GRAPH = {
   twitter: "ccccjjjjeeee",
 };
 
-const blogCollection = defineCollection({
+const contentCollection = defineCollection({
   schema: z.object({
     title: z.string().min(1),
+    type: z.enum(["article", "talk", "video", "appearance"]),
     description: z.string().min(1),
     published: z
       .string()
@@ -59,12 +60,15 @@ const miscCollection = defineCollection({
 const bookNotesCollection = defineCollection({
   schema: z.object({
     title: z.string(),
-    published: z.string().regex(/^\d{4}\/\d{2}\/\d{2}$/).transform((str) => new Date(str)),
-  })
-})
+    published: z
+      .string()
+      .regex(/^\d{4}\/\d{2}\/\d{2}$/)
+      .transform((str) => new Date(str)),
+  }),
+});
 
 export const collections = {
-  blog: blogCollection,
+  content: contentCollection,
   projects: projectsCollection,
   misc: miscCollection,
   bookNotes: bookNotesCollection,
