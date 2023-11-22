@@ -48,6 +48,7 @@ function ThemeToggleButton(props: {
 }) {
   return (
     <Motion.div
+      class="select-none"
       initial={{ y: -30, opacity: 0.25 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: 30, opacity: 0.25 }}
