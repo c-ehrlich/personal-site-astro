@@ -34,4 +34,7 @@ export default defineConfig({
   },
   output: "static",
   site: "https://c-ehrlich.dev/",
+  redirects: {
+    "/blog/golang": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  },
 });
