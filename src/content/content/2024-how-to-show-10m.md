@@ -7,6 +7,7 @@ updated: 2024/12/17
 tags:
   - Performance
   - Talk
+videoLength: 15
 ---
 
 A few days ago I had the chance to speak at [Vendure](https://vendure.io/) conference about a type of frontend performance work I often do, about which there are not many resources online: Keeping an app performant while there are huge amounts of data.

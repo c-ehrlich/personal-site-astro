@@ -7,6 +7,7 @@ updated: 2023/11/10
 tags:
   - Performance
   - Talk
+videoLength: 24
 ---
 
 Last week I spoke at City JS Berlin about some of the most interesting TC39 proposals, the timelines for them, and how this releates to TypeScript. This talk might interest you if
