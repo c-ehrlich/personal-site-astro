@@ -237,6 +237,20 @@ declare module 'astro:content' {
   collection: "content";
   data: InferEntrySchema<"content">
 } & { render(): Render[".md"] };
+"2023-new-tools.md": {
+	id: "2023-new-tools.md";
+  slug: "2023-new-tools";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
+} & { render(): Render[".md"] };
+"2024-how-to-show-10m.md": {
+	id: "2024-how-to-show-10m.md";
+  slug: "2024-how-to-show-10m";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
+} & { render(): Render[".md"] };
 "advanced-trpc.md": {
 	id: "advanced-trpc.md";
   slug: "advanced-trpc";
