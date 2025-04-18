@@ -2,8 +2,8 @@
 title: OTel Frustrations
 type: "article"
 description: "..."
-published: 2025/04/12
-updated: 2025/04/12
+published: 2025/04/18
+updated: 2025/04/18
 tags:
   - opinion
   - OpenTelemetry
