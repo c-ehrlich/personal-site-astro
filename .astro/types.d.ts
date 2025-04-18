@@ -251,6 +251,13 @@ declare module 'astro:content' {
   collection: "content";
   data: InferEntrySchema<"content">
 } & { render(): Render[".md"] };
+"2025-otel-frustrations.md": {
+	id: "2025-otel-frustrations.md";
+  slug: "2025-otel-frustrations";
+  body: string;
+  collection: "content";
+  data: InferEntrySchema<"content">
+} & { render(): Render[".md"] };
 "2025-support-your-feature.md": {
 	id: "2025-support-your-feature.md";
   slug: "2025-support-your-feature";
