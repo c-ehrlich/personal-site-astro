@@ -1,20 +1,15 @@
 import { defineConfig } from "astro/config";
 import solidJs from "@astrojs/solid-js";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
   prefetch: true,
-  integrations: [
-    solidJs(),
-    tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
-    }),
-    mdx(),
-  ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  integrations: [solidJs(), mdx()],
   markdown: {
     shikiConfig: {
       // theme list: https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes

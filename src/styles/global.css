@@ -1,21 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--theme-background);
+  --color-text: var(--theme-text);
+  --color-link: var(--theme-link);
+}
 
 @layer base {
   /* Design System Theming */
   html {
-    --color-background: 15deg 50% 95%;
-    --color-text: 15deg 5% 5%;
-    --color-link: 15deg 45% 40%;
-    --test: #944f38;
+    --theme-background: hsl(15deg 50% 95%);
+    --theme-text: hsl(15deg 5% 5%);
+    --theme-link: hsl(15deg 45% 40%);
   }
 
   html.dark {
-    --color-background: 15deg 35% 5%;
-    --color-text: 15deg 15% 90%;
-    --color-link: 15deg 45% 70%;
-    --test: #d5a190;
+    --theme-background: hsl(15deg 35% 5%);
+    --theme-text: hsl(15deg 15% 90%);
+    --theme-link: hsl(15deg 45% 70%);
   }
 }
 

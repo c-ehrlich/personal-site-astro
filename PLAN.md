@@ -274,15 +274,15 @@ Tailwind 4 config is done in CSS. Move customizations from `tailwind.config.cjs`
 7. ✅ Run `pnpm build` and fix any issues
 8. ✅ Verify with `pnpm dev`
 
-### Checkpoint C: Tailwind 4 Migration (TODO - SEPARATE)
+### ✅ Checkpoint C: Tailwind 4 Migration (DONE)
 
-1. [ ] Remove @astrojs/tailwind from astro.config.mjs
-2. [ ] Update tailwindcss to v4, add @tailwindcss/vite
-3. [ ] Add Tailwind Vite plugin to astro.config.mjs
-4. [ ] Update CSS imports
-5. [ ] Migrate tailwind.config.cjs to CSS @theme rules
-6. [ ] Delete tailwind.config.cjs
-7. [ ] Verify with `pnpm build` and `pnpm dev`
+1. ✅ Remove @astrojs/tailwind from astro.config.mjs
+2. ✅ Update tailwindcss to v4, add @tailwindcss/vite
+3. ✅ Add Tailwind Vite plugin to astro.config.mjs
+4. ✅ Update CSS imports
+5. ✅ Migrate tailwind.config.cjs to CSS @theme rules
+6. ✅ Delete tailwind.config.cjs
+7. ✅ Verify with `pnpm build` and `pnpm dev`
 
 ---
 
