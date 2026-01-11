@@ -1,12 +1,12 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
   const docs = await getCollection("misc");
   return docs.map((entry) => ({
     // Pass blog entry via props
-    params: { slug: entry.slug },
+    params: { slug: entry.id.replace(/\.mdx?$/, "") },
     props: { entry },
   }));
 }
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const { entry }: Props = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title} isBlog={true}>

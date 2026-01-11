@@ -16,7 +16,7 @@ export async function GET() {
     .map((post) => ({
       title: post.data.title,
       description: post.data.description,
-      link: post.slug,
+      link: post.id.replace(/\.mdx?$/, ""),
       pubDate: post.data.published,
     }));
 

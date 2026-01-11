@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 export interface Props {
   title: string;
@@ -49,4 +49,4 @@ const image = new URL(
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={image} />
 
-<ViewTransitions />
+<ClientRouter />

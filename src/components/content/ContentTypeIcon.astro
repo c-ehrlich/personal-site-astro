@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { MessagesSquare, Mic2, PenLine, Youtube } from "lucide-astro";
+import { MessagesSquare, MicVocal, PenLine, Youtube } from "@lucide/astro";
 
 interface Props {
   type: CollectionEntry<"content">["data"]["type"];
@@ -21,7 +21,7 @@ const { type }: Props = Astro.props;
       case "talk":
         return (
           <div class="pb-1">
-            <Mic2 class="h-[18px] w-[18px] text-text" />
+            <MicVocal class="h-[18px] w-[18px] text-text" />
           </div>
         );
       case "video":

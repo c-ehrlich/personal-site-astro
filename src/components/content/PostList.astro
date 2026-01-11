@@ -19,7 +19,7 @@ const { posts }: Props = Astro.props;
           <div class="self-end">
             <ContentTypeIcon type={post.data.type} />
           </div>
-          <a class="-mb-[2px] text-2xl" href={`/blog/${post.slug}`}>
+          <a class="-mb-[2px] text-2xl" href={`/blog/${post.id.replace(/\.mdx?$/, "")}`}>
             {post.data.title}
           </a>
         </div>

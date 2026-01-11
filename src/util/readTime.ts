@@ -8,5 +8,5 @@ export function readTime(
     return `${post.data.videoLength} min video`;
   }
 
-  return getReadingtime(post.body).text;
+  return getReadingtime(post.body ?? "").text;
 }

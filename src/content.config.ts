@@ -1,4 +1,5 @@
 import { z, defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
 
 export const SITE = {
   title: "Christopher Ehrlich",
@@ -15,6 +16,7 @@ export const OPEN_GRAPH = {
 };
 
 const contentCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/content" }),
   schema: z.object({
     title: z.string().min(1),
     type: z.enum(["article", "talk", "video", "appearance"]),
@@ -34,6 +36,7 @@ const contentCollection = defineCollection({
 });
 
 const projectsCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -44,7 +47,6 @@ const projectsCollection = defineCollection({
     tags: z.array(z.string()),
     image: z
       .string()
-      // match any subpath to an image ie "/a/b/c/d.jpg"
       .regex(/\/([^\/^.]+\/)+[^\/^.]+\.(jpg|jpeg|png|gif|webp|svg)$/),
     github: z.string().url().optional(),
     deployed: z.string().url().optional(),
@@ -52,12 +54,14 @@ const projectsCollection = defineCollection({
 });
 
 const miscCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/misc" }),
   schema: z.object({
     title: z.string(),
   }),
 });
 
 const bookNotesCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/bookNotes" }),
   schema: z.object({
     title: z.string(),
     published: z
@@ -67,9 +71,15 @@ const bookNotesCollection = defineCollection({
   }),
 });
 
+const blogDraftCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/blog-draft" }),
+  schema: z.object({}).passthrough(),
+});
+
 export const collections = {
   content: contentCollection,
   projects: projectsCollection,
   misc: miscCollection,
   bookNotes: bookNotesCollection,
+  "blog-draft": blogDraftCollection,
 };

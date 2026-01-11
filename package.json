@@ -20,19 +20,19 @@
     "format:check": "prettier --check --plugin-search-dir=. **/*.{cjs,mjs,ts,tsx,md,json,astro}"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.0.0",
-    "@astrojs/solid-js": "^3.0.0",
-    "lucide-astro": "^0.292.0",
+    "@astrojs/mdx": "^4.3.12",
+    "@astrojs/solid-js": "^5.1.3",
+    "@lucide/astro": "^0.562.0",
     "reading-time": "^1.5.0",
     "solid-js": "^1.9.0",
     "solid-motionone": "^1.0.4"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
-    "@astrojs/rss": "^3.0.0",
-    "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/rss": "^4.0.14",
+    "@astrojs/tailwind": "^5.1.5",
     "@typescript-eslint/parser": "^5.47.1",
-    "astro": "^3.0.0",
+    "astro": "^5.0.0",
     "eslint": "^8.30.0",
     "eslint-plugin-astro": "^0.21.1",
     "eslint-plugin-jsx-a11y": "^6.6.1",

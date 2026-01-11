@@ -52,7 +52,6 @@ Remote images need width/height specified. Public folder images can use string p
 
 ```diff
   export default defineConfig({
-    server: { port: 5432 },
 -   experimental: {
 -     viewTransitions: true,
 -   },
@@ -102,23 +101,41 @@ Affects remark/rehype plugins. This project uses default Shiki config only - sho
 
 ---
 
-## Phase 3: v4 → v5 Changes
+## Phase 3: v3 → v5 Changes
 
-### 3.1 Rename `ViewTransitions` → `ClientRouter`
+**Status: TODO**
 
-**File:** `src/components/BaseHead.astro`
+### 3.1 Update package.json dependencies
 
 ```diff
-- import { ViewTransitions } from "astro:transitions";
-+ import { ClientRouter } from "astro:transitions";
-
-  ...
-
-- <ViewTransitions />
-+ <ClientRouter />
+  "dependencies": {
+-   "@astrojs/mdx": "^1.0.0",
+-   "@astrojs/solid-js": "^3.0.0",
++   "@astrojs/mdx": "^4.3.12",
++   "@astrojs/solid-js": "^5.1.3",
+-   "lucide-astro": "^0.292.0",
++   "@lucide/astro": "^0.460.0",
+    "reading-time": "^1.5.0",
+-   "solid-js": "^1.9.0",
++   "solid-js": "^1.9.0",
+    "solid-motionone": "^1.0.4"
+  },
+  "devDependencies": {
+-   "@astrojs/check": "^0.9.6",
++   "@astrojs/check": "^0.9.6",
+-   "@astrojs/rss": "^3.0.0",
++   "@astrojs/rss": "^4.0.14",
+-   "@astrojs/tailwind": "^5.0.0",
++   "@astrojs/tailwind": "^5.1.5",
+-   "astro": "^3.0.0",
++   "astro": "^5.0.0",
+    ...
+  }
 ```
 
-### 3.2 Update tsconfig.json structure
+**Note:** `@astrojs/tailwind` is deprecated but still works with Tailwind 3. Keep it for now; migrate to Tailwind 4 Vite plugin separately.
+
+### 3.2 Update tsconfig.json
 
 **File:** `tsconfig.json`
 
@@ -134,117 +151,155 @@ Affects remark/rehype plugins. This project uses default Shiki config only - sho
   }
 ```
 
-### 3.3 Content Collections changes (if needed)
+### 3.3 Rename `ViewTransitions` → `ClientRouter`
 
-v5 changes how content collections work. The current `config.ts` should mostly work, but verify after upgrade.
+**File:** `src/components/BaseHead.astro`
+
+```diff
+- import { ViewTransitions } from "astro:transitions";
++ import { ClientRouter } from "astro:transitions";
+
+  ...
+
+- <ViewTransitions />
++ <ClientRouter />
+```
+
+### 3.4 Migrate lucide-astro → @lucide/astro
+
+**All files using lucide icons:**
+
+```diff
+- import { IconName } from "lucide-astro";
++ import { IconName } from "@lucide/astro";
+```
+
+### 3.5 Content Collections (verify after upgrade)
+
+v5 changes how content collections work. The current `config.ts` should mostly work via backwards compatibility, but verify after upgrade.
 
 Key changes:
 - `astro:content` cannot be used on client
-- Collection schema syntax may need updates for complex cases
+- Collections should be defined in `src/content.config.ts` (backwards compat exists for `src/content/config.ts`)
 
-### 3.4 `src/env.d.ts` changes
+### 3.6 `src/env.d.ts` 
 
-v5 uses `.astro/types.d.ts` instead. The current `env.d.ts` can be simplified or removed.
-
-**Current:** `src/env.d.ts`
+v5 uses `.astro/types.d.ts` instead. Current format is already compatible:
 ```typescript
 /// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
 ```
 
-This is already v5-compatible format.
-
 ---
 
-## Dependency Updates
+## Phase 4: Tailwind 4 Migration (SEPARATE)
 
-### package.json changes
+**Status: TODO - Do after v5 migration is stable**
 
+`@astrojs/tailwind` is deprecated. Tailwind 4 has a native Vite plugin.
+
+### 4.1 Remove @astrojs/tailwind integration
+
+**File:** `astro.config.mjs`
 ```diff
-  "dependencies": {
--   "@astrojs/image": "^0.13.0",
--   "@astrojs/mdx": "^0.17.2",
--   "@astrojs/solid-js": "^1.2.3",
-+   "@astrojs/mdx": "^4.0.0",
-+   "@astrojs/solid-js": "^5.0.0",
-    "@motionone/solid": "^10.15.4",
-    "lucide-astro": "^0.292.0",
-    "reading-time": "^1.5.0",
-    "solid-js": "^1.4.3"
-  },
-  "devDependencies": {
--   "@astrojs/rss": "^2.0.0",
--   "@astrojs/tailwind": "^3.0.0",
--   "@types/sharp": "^0.31.1",
-+   "@astrojs/rss": "^4.0.0",
-+   "@astrojs/tailwind": "^6.0.0",
-    "@typescript-eslint/parser": "^5.47.1",
--   "astro": "^2.10.7",
-+   "astro": "^5.0.0",
-    "eslint": "^8.30.0",
-    "eslint-plugin-astro": "^0.21.1",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "prettier": "^2.8.1",
-    "prettier-plugin-astro": "^0.7.0",
-    "prettier-plugin-tailwindcss": "^0.2.1",
--   "sharp": "^0.31.3",
-    "tailwindcss": "^3.2.4"
-  }
+- import tailwind from "@astrojs/tailwind";
+
+  export default defineConfig({
+    integrations: [
+-     tailwind(),
+      mdx(),
+      solidJs(),
+    ],
+  });
 ```
 
-Note: `sharp` is now optional (Astro uses it automatically if installed, but it's not required).
+### 4.2 Update dependencies
+
+```diff
+- "@astrojs/tailwind": "^5.1.5",
+- "tailwindcss": "^3.2.4",
++ "tailwindcss": "^4.0.0",
++ "@tailwindcss/vite": "^4.0.0",
+```
+
+### 4.3 Add Tailwind Vite plugin
+
+**File:** `astro.config.mjs`
+```diff
++ import tailwindcss from "@tailwindcss/vite";
+
+  export default defineConfig({
++   vite: {
++     plugins: [tailwindcss()],
++   },
+    integrations: [mdx(), solidJs()],
+  });
+```
+
+### 4.4 Update CSS imports
+
+Tailwind 4 uses CSS-based config. Update main CSS file:
+```diff
+- @tailwind base;
+- @tailwind components;
+- @tailwind utilities;
++ @import "tailwindcss";
+```
+
+### 4.5 Migrate tailwind.config.cjs → CSS
+
+Tailwind 4 config is done in CSS. Move customizations from `tailwind.config.cjs` to CSS `@theme` rules.
 
 ---
 
 ## Execution Order
 
-### Checkpoint A: Upgrade to v3
+### ✅ Checkpoint A: Upgrade to v3 (DONE)
 
-1. **Update dependencies** to v3-compatible versions
-2. **Run `pnpm install`**
-3. **Fix astro.config.mjs** (remove image integration, remove experimental.viewTransitions)
-4. **Fix tsconfig.json** (remove @astrojs/image/client type)
-5. **Fix Image imports** in Layout.astro and projects.astro (use astro:assets)
-6. **Run `pnpm build` and `pnpm dev`** to verify
+1. ✅ Update dependencies to v3-compatible versions
+2. ✅ Run `pnpm install`
+3. ✅ Fix astro.config.mjs (remove image integration, remove experimental.viewTransitions)
+4. ✅ Fix tsconfig.json (remove @astrojs/image/client type)
+5. ✅ Fix Image imports in Layout.astro and projects.astro (use astro:assets)
+6. ✅ Verify with `pnpm build` and `pnpm dev`
 
-### Checkpoint B: Upgrade to v5
+### ✅ Checkpoint B: Upgrade to v5 (DONE)
 
-7. **Update dependencies** to v5-compatible versions
-8. **Run `pnpm install`**
-9. **Fix tsconfig.json** (add include/exclude)
-10. **Rename ViewTransitions → ClientRouter** in BaseHead.astro
-11. **Run `pnpm build` and `pnpm dev`** to verify
+1. ✅ Update package.json dependencies
+2. ✅ Run `pnpm install`
+3. ✅ Update tsconfig.json (add include/exclude)
+4. ✅ Rename ViewTransitions → ClientRouter in BaseHead.astro
+5. ✅ Migrate lucide-astro → @lucide/astro
+6. ✅ Fix content collection API changes (entry.slug → entry.id, entry.render() → render(entry))
+7. ✅ Run `pnpm build` and fix any issues
+8. ✅ Verify with `pnpm dev`
+
+### Checkpoint C: Tailwind 4 Migration (TODO - SEPARATE)
+
+1. [ ] Remove @astrojs/tailwind from astro.config.mjs
+2. [ ] Update tailwindcss to v4, add @tailwindcss/vite
+3. [ ] Add Tailwind Vite plugin to astro.config.mjs
+4. [ ] Update CSS imports
+5. [ ] Migrate tailwind.config.cjs to CSS @theme rules
+6. [ ] Delete tailwind.config.cjs
+7. [ ] Verify with `pnpm build` and `pnpm dev`
 
 ---
 
-## Files to Modify (Summary)
+## Files to Modify (v5 Migration)
 
 | File | Changes |
 |------|---------|
-| `package.json` | Update deps, remove @astrojs/image, @types/sharp |
-| `astro.config.mjs` | Remove image integration, remove experimental block |
-| `tsconfig.json` | Remove types array, add include/exclude |
-| `src/layouts/Layout.astro` | Change Image import, remove quality prop |
-| `src/pages/projects.astro` | Change Image import, remove quality prop, handle remote images |
+| `package.json` | Update deps to v5-compatible versions |
+| `tsconfig.json` | Add include/exclude |
 | `src/components/BaseHead.astro` | Rename ViewTransitions → ClientRouter |
-
----
-
-## Potential Issues
-
-1. **Remote images in projects.astro** - Currently using string paths from frontmatter. May need to configure `image.domains` or use `inferSize` prop.
-
-2. **Sharp dependency** - Can keep or remove. If removed, Astro will warn but work with Squoosh fallback.
-
-3. **lucide-astro** - Third-party package, verify compatibility with Astro v5.
-
-4. **@motionone/solid** - Third-party, verify compatibility.
+| All files with lucide imports | Change lucide-astro → @lucide/astro |
 
 ---
 
 ## Verification Steps
 
-After migration:
+After v5 migration:
 
 ```bash
 pnpm install
@@ -258,4 +313,5 @@ Check:
 - [ ] Projects page images display
 - [ ] View transitions work
 - [ ] Theme toggle works
+- [ ] Icons display correctly
 - [ ] No console errors
