@@ -14,9 +14,6 @@ importers:
       '@astrojs/solid-js':
         specifier: ^3.0.0
         version: 3.0.3(solid-js@1.9.10)(vite@4.5.14(@types/node@18.11.18))
-      '@motionone/solid':
-        specifier: ^10.15.4
-        version: 10.15.4(solid-js@1.9.10)
       lucide-astro:
         specifier: ^0.292.0
         version: 0.292.0(astro@3.6.5(@types/node@18.11.18)(typescript@5.9.3))
@@ -26,6 +23,9 @@ importers:
       solid-js:
         specifier: ^1.9.0
         version: 1.9.10
+      solid-motionone:
+        specifier: ^1.0.4
+        version: 1.0.4(solid-js@1.9.10)
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.6
@@ -730,28 +730,23 @@ packages:
   '@mdx-js/mdx@2.3.0':
     resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==}
 
-  '@motionone/animation@10.15.1':
-    resolution: {integrity: sha512-mZcJxLjHor+bhcPuIFErMDNyrdb2vJur8lSfMCsuCB4UyV8ILZLvK+t+pg56erv8ud9xQGK/1OGPt10agPrCyQ==}
+  '@motionone/animation@10.18.0':
+    resolution: {integrity: sha512-9z2p5GFGCm0gBsZbi8rVMOAJCtw1WqBTIPw3ozk06gDvZInBPIsQcHgYogEJ4yuHJ+akuW8g1SEIOpTOvYs8hw==}
 
-  '@motionone/dom@10.15.3':
-    resolution: {integrity: sha512-FQ7a2zMBXc1UeU8CG9G3yDpst55fbb0+C9A0VGfwOITitBCzigKZnXRgsRSWWR+FW57GSc13eGQxtYB0lKG0Ng==}
+  '@motionone/dom@10.18.0':
+    resolution: {integrity: sha512-bKLP7E0eyO4B2UaHBBN55tnppwRnaE3KFfh3Ps9HhnAkar3Cb69kUCJY9as8LrccVYKgHA+JY5dOQqJLOPhF5A==}
 
-  '@motionone/easing@10.15.1':
-    resolution: {integrity: sha512-6hIHBSV+ZVehf9dcKZLT7p5PEKHGhDwky2k8RKkmOvUoYP3S+dXsKupyZpqx5apjd9f+php4vXk4LuS+ADsrWw==}
+  '@motionone/easing@10.18.0':
+    resolution: {integrity: sha512-VcjByo7XpdLS4o9T8t99JtgxkdMcNWD3yHU/n6CLEz3bkmKDRZyYQ/wmSf6daum8ZXqfUAgFeCZSpJZIMxaCzg==}
 
-  '@motionone/generators@10.15.1':
-    resolution: {integrity: sha512-67HLsvHJbw6cIbLA/o+gsm7h+6D4Sn7AUrB/GPxvujse1cGZ38F5H7DzoH7PhX+sjvtDnt2IhFYF2Zp1QTMKWQ==}
+  '@motionone/generators@10.18.0':
+    resolution: {integrity: sha512-+qfkC2DtkDj4tHPu+AFKVfR/C30O1vYdvsGYaR13W/1cczPrrcjdvYCj0VLFuRMN+lP1xvpNZHCRNM4fBzn1jg==}
 
-  '@motionone/solid@10.15.4':
-    resolution: {integrity: sha512-7dMGjNRxgrwXfzoHRngth12pD0qONHgjLk/+5q5H6HqOmkPtUciipZSRmixXPMI3UgDzcstHhNpVbNhzZWZvcg==}
-    peerDependencies:
-      solid-js: ^1.5.0
+  '@motionone/types@10.17.1':
+    resolution: {integrity: sha512-KaC4kgiODDz8hswCrS0btrVrzyU2CSQKO7Ps90ibBVSQmjkrt2teqta6/sOG59v7+dPnKMAg13jyqtMKV2yJ7A==}
 
-  '@motionone/types@10.15.1':
-    resolution: {integrity: sha512-iIUd/EgUsRZGrvW0jqdst8st7zKTzS9EsKkP+6c6n4MPZoQHwiHuVtTQLD6Kp0bsBLhNzKIBlHXponn/SDT4hA==}
-
-  '@motionone/utils@10.15.1':
-    resolution: {integrity: sha512-p0YncgU+iklvYr/Dq4NobTRdAPv9PveRDUXabPEeOjBLSO/1FNB2phNTZxOxpi1/GZwYpAoECEa0Wam+nsmhSw==}
+  '@motionone/utils@10.18.0':
+    resolution: {integrity: sha512-3XVF7sgyTSI2KWvTf6uLlBJ5iAgRgmvp3bpuOiQJvInd4nZ19ET8lX5unn30SlmRH7hXbBbH+Gxd0m0klJ3Xtw==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -769,15 +764,25 @@ packages:
     resolution: {integrity: sha512-wfzX8kc1PMyUILA+1Z/EqoE4UCXGy0iRGMhPwdfae1+f0OXlLqCk+By+aMzgJBzR9AzS4CDizioG6Ss1gvAFJw==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@solid-primitives/props@3.0.1':
-    resolution: {integrity: sha512-5v27ex4KxxnIbgze1lXPEXHO/ebbtEjL6idkhezH/7jHpjunl8PYabpDgoGO16tb8DawcZWOAXa7waWqWPAe/A==}
+  '@solid-primitives/props@3.2.2':
+    resolution: {integrity: sha512-lZOTwFJajBrshSyg14nBMEP0h8MXzPowGO0s3OeiR3z6nXHTfj0FhzDtJMv+VYoRJKQHG2QRnJTgCzK6erARAw==}
     peerDependencies:
-      solid-js: ^1.6.0
+      solid-js: ^1.6.12
 
-  '@solid-primitives/utils@4.0.0':
-    resolution: {integrity: sha512-fGsJy8Z8YiwogpiezD7TWjI62UCb0JAHJWdoXWGrggrn4bfToZotKkabiB0IVFMkWVE1ZcrkvZT3bkmqGnK0ng==}
+  '@solid-primitives/refs@1.1.2':
+    resolution: {integrity: sha512-K7tf2thy7L+YJjdqXspXOg5xvNEOH8tgEWsp0+1mQk3obHBRD6hEjYZk7p7FlJphSZImS35je3UfmWuD7MhDfg==}
     peerDependencies:
-      solid-js: ^1.6.0
+      solid-js: ^1.6.12
+
+  '@solid-primitives/transition-group@1.1.2':
+    resolution: {integrity: sha512-gnHS0OmcdjeoHN9n7Khu8KNrOlRc8a2weETDt2YT6o1zeW/XtUC6Db3Q9pkMU/9cCKdEmN4b0a/41MKAHRhzWA==}
+    peerDependencies:
+      solid-js: ^1.6.12
+
+  '@solid-primitives/utils@6.3.2':
+    resolution: {integrity: sha512-hZ/M/qr25QOCcwDPOHtGjxTD8w2mNyVAYvcfgwzBHq2RwNqHNdDNsMZYap20+ruRwW4A3Cdkczyoz0TSxLCAPQ==}
+    peerDependencies:
+      solid-js: ^1.6.12
 
   '@types/acorn@4.0.6':
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
@@ -1251,6 +1256,9 @@ packages:
 
   csstype@3.1.1:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
+
+  csstype@3.2.3:
+    resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
 
   damerau-levenshtein@1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
@@ -2830,6 +2838,11 @@ packages:
   solid-js@1.9.10:
     resolution: {integrity: sha512-Coz956cos/EPDlhs6+jsdTxKuJDPT7B5SVIWgABwROyxjY7Xbr8wkzD68Et+NxnV7DLJ3nJdAC2r9InuV/4Jew==}
 
+  solid-motionone@1.0.4:
+    resolution: {integrity: sha512-aqEjgecoO9raDFznu/dEci7ORSmA26Kjj9J4Cn1Gyr0GZuOVdvsNxdxClTL9J40Aq/uYFx4GLwC8n70fMLHiuA==}
+    peerDependencies:
+      solid-js: ^1.8.0
+
   solid-refresh@0.6.3:
     resolution: {integrity: sha512-F3aPsX6hVw9ttm5LYlth8Q15x6MlI/J3Dn+o3EQyRTtTxidepSTwAYdozt01/YA+7ObcciagGEyXIopGZzQtbA==}
     peerDependencies:
@@ -3967,46 +3980,38 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@motionone/animation@10.15.1':
+  '@motionone/animation@10.18.0':
     dependencies:
-      '@motionone/easing': 10.15.1
-      '@motionone/types': 10.15.1
-      '@motionone/utils': 10.15.1
+      '@motionone/easing': 10.18.0
+      '@motionone/types': 10.17.1
+      '@motionone/utils': 10.18.0
       tslib: 2.4.1
 
-  '@motionone/dom@10.15.3':
+  '@motionone/dom@10.18.0':
     dependencies:
-      '@motionone/animation': 10.15.1
-      '@motionone/generators': 10.15.1
-      '@motionone/types': 10.15.1
-      '@motionone/utils': 10.15.1
+      '@motionone/animation': 10.18.0
+      '@motionone/generators': 10.18.0
+      '@motionone/types': 10.17.1
+      '@motionone/utils': 10.18.0
       hey-listen: 1.0.8
       tslib: 2.4.1
 
-  '@motionone/easing@10.15.1':
+  '@motionone/easing@10.18.0':
     dependencies:
-      '@motionone/utils': 10.15.1
+      '@motionone/utils': 10.18.0
       tslib: 2.4.1
 
-  '@motionone/generators@10.15.1':
+  '@motionone/generators@10.18.0':
     dependencies:
-      '@motionone/types': 10.15.1
-      '@motionone/utils': 10.15.1
+      '@motionone/types': 10.17.1
+      '@motionone/utils': 10.18.0
       tslib: 2.4.1
 
-  '@motionone/solid@10.15.4(solid-js@1.9.10)':
-    dependencies:
-      '@motionone/dom': 10.15.3
-      '@motionone/utils': 10.15.1
-      '@solid-primitives/props': 3.0.1(solid-js@1.9.10)
-      solid-js: 1.9.10
-      tslib: 2.4.1
+  '@motionone/types@10.17.1': {}
 
-  '@motionone/types@10.15.1': {}
-
-  '@motionone/utils@10.15.1':
+  '@motionone/utils@10.18.0':
     dependencies:
-      '@motionone/types': 10.15.1
+      '@motionone/types': 10.17.1
       hey-listen: 1.0.8
       tslib: 2.4.1
 
@@ -4031,12 +4036,21 @@ snapshots:
       tiny-glob: 0.2.9
       tslib: 2.4.1
 
-  '@solid-primitives/props@3.0.1(solid-js@1.9.10)':
+  '@solid-primitives/props@3.2.2(solid-js@1.9.10)':
     dependencies:
-      '@solid-primitives/utils': 4.0.0(solid-js@1.9.10)
+      '@solid-primitives/utils': 6.3.2(solid-js@1.9.10)
       solid-js: 1.9.10
 
-  '@solid-primitives/utils@4.0.0(solid-js@1.9.10)':
+  '@solid-primitives/refs@1.1.2(solid-js@1.9.10)':
+    dependencies:
+      '@solid-primitives/utils': 6.3.2(solid-js@1.9.10)
+      solid-js: 1.9.10
+
+  '@solid-primitives/transition-group@1.1.2(solid-js@1.9.10)':
+    dependencies:
+      solid-js: 1.9.10
+
+  '@solid-primitives/utils@6.3.2(solid-js@1.9.10)':
     dependencies:
       solid-js: 1.9.10
 
@@ -4625,6 +4639,8 @@ snapshots:
   cssesc@3.0.0: {}
 
   csstype@3.1.1: {}
+
+  csstype@3.2.3: {}
 
   damerau-levenshtein@1.0.8: {}
 
@@ -6672,6 +6688,16 @@ snapshots:
       csstype: 3.1.1
       seroval: 1.3.2
       seroval-plugins: 1.3.3(seroval@1.3.2)
+
+  solid-motionone@1.0.4(solid-js@1.9.10):
+    dependencies:
+      '@motionone/dom': 10.18.0
+      '@motionone/utils': 10.18.0
+      '@solid-primitives/props': 3.2.2(solid-js@1.9.10)
+      '@solid-primitives/refs': 1.1.2(solid-js@1.9.10)
+      '@solid-primitives/transition-group': 1.1.2(solid-js@1.9.10)
+      csstype: 3.2.3
+      solid-js: 1.9.10
 
   solid-refresh@0.6.3(solid-js@1.9.10):
     dependencies:

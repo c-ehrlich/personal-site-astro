@@ -14,18 +14,18 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "typecheck": "astro check",
     "astro": "astro",
     "format": "prettier --write --plugin-search-dir=. **/*.{cjs,mjs,ts,tsx,md,json,astro}",
-    "format:check": "prettier --check --plugin-search-dir=. **/*.{cjs,mjs,ts,tsx,md,json,astro}",
-    "typecheck": "astro check"
+    "format:check": "prettier --check --plugin-search-dir=. **/*.{cjs,mjs,ts,tsx,md,json,astro}"
   },
   "dependencies": {
     "@astrojs/mdx": "^1.0.0",
     "@astrojs/solid-js": "^3.0.0",
-    "@motionone/solid": "^10.15.4",
     "lucide-astro": "^0.292.0",
     "reading-time": "^1.5.0",
-    "solid-js": "^1.9.0"
+    "solid-js": "^1.9.0",
+    "solid-motionone": "^1.0.4"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",

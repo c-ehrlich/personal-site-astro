@@ -1,37 +1,33 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import ContentLayout from "../../../layouts/ContentLayout.astro";
+import { typedKeys } from "../../../util/object";
 
 export async function getStaticPaths() {
   const docs = await getCollection("content");
 
-  return ["talk", "appearance", "article", "video"].map((type) => {
-    let header;
-    switch (type) {
-      case "talk":
-        header = "Talks";
-        break;
-      case "appearance":
-        header = "Appearances";
-        break;
-      case "article":
-        header = "Articles";
-        break;
-      case "video":
-        header = "Videos";
-        break;
-    }
-    return {
-      params: { slug: type },
-      props: {
-        header: header,
-        posts: docs.filter((doc) => doc.data.type === type),
-      },
-    };
-  });
+  const typeToHeader = {
+    talk: "Talks",
+    appearance: "Appearances",
+    article: "Articles",
+    video: "Videos",
+  } as const;
+
+  return typedKeys(typeToHeader).map((type) => ({
+    params: { slug: type },
+    props: {
+      header: typeToHeader[type],
+      posts: docs.filter((doc) => doc.data.type === type),
+    },
+  }));
 }
 
-const { header, posts } = Astro.props;
+interface Props {
+  header: string;
+  posts: CollectionEntry<"content">[];
+}
+
+const { header, posts }: Props = Astro.props;
 ---
 
 <ContentLayout header={header} posts={posts} />

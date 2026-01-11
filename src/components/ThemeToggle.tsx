@@ -1,6 +1,6 @@
 import { createEffect, createSignal, Switch, Match } from "solid-js";
 import type { JSX } from "solid-js/jsx-runtime";
-import { Motion, Presence } from "@motionone/solid";
+import { Motion, Presence } from "solid-motionone";
 
 /**
  * This has theme flash unless it is used together with
