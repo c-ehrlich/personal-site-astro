@@ -3,6 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild"
+    ]
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,30 +16,31 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write --plugin-search-dir=. **/*.{cjs,mjs,ts,tsx,md,json,astro}",
-    "format:check": "prettier --check --plugin-search-dir=. **/*.{cjs,mjs,ts,tsx,md,json,astro}"
+    "format:check": "prettier --check --plugin-search-dir=. **/*.{cjs,mjs,ts,tsx,md,json,astro}",
+    "typecheck": "astro check"
   },
   "dependencies": {
-    "@astrojs/image": "^0.13.0",
-    "@astrojs/mdx": "^0.17.2",
-    "@astrojs/solid-js": "^1.2.3",
+    "@astrojs/mdx": "^1.0.0",
+    "@astrojs/solid-js": "^3.0.0",
     "@motionone/solid": "^10.15.4",
     "lucide-astro": "^0.292.0",
     "reading-time": "^1.5.0",
-    "solid-js": "^1.4.3"
+    "solid-js": "^1.9.0"
   },
   "devDependencies": {
-    "@astrojs/rss": "^2.0.0",
-    "@astrojs/tailwind": "^3.0.0",
-    "@types/sharp": "^0.31.1",
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/rss": "^3.0.0",
+    "@astrojs/tailwind": "^5.0.0",
     "@typescript-eslint/parser": "^5.47.1",
-    "astro": "^2.10.7",
+    "astro": "^3.0.0",
     "eslint": "^8.30.0",
     "eslint-plugin-astro": "^0.21.1",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "prettier": "^2.8.1",
     "prettier-plugin-astro": "^0.7.0",
     "prettier-plugin-tailwindcss": "^0.2.1",
-    "sharp": "^0.31.3",
-    "tailwindcss": "^3.2.4"
+    "sharp": "^0.34.5",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^5.9.3"
   }
 }

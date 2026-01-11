@@ -1,3 +1,6 @@
+- [ ] mailing list
+- [ ] use nano banana pro to make cute new icons for the theme switcher?
+---
 - [ ] figure out how to get gradient to work in og-images
   - [ ] does satori process css in a nonstandard way?
   - [ ] is it bc we dont have browser styles? if so, which browser styles are making it work in test but not in satori

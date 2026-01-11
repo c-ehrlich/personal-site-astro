@@ -5,7 +5,7 @@ const BLOG_TITLE = "Christopher Ehrlich's Blog";
 const BLOG_DESCRIPTION =
   "I write about tech, education, OSS, and other things.";
 
-export async function get() {
+export async function GET() {
   const posts = await getCollection("content");
   const items = posts
     .sort(

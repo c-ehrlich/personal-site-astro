@@ -1,23 +1,15 @@
 import { defineConfig } from "astro/config";
-import image from "@astrojs/image";
 import solidJs from "@astrojs/solid-js";
 import tailwind from "@astrojs/tailwind";
-
-// https://astro.build/config
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
+  prefetch: true,
   server: {
     port: 5432,
   },
-  experimental: {
-    viewTransitions: true,
-  },
   integrations: [
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
     solidJs(),
     tailwind({
       config: {

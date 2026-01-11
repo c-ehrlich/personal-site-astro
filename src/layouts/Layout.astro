@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import BaseHead from "../components/BaseHead.astro";
 import { ThemeToggle } from "../components/ThemeToggle";
 import ThemeToggleInline from "../components/ThemeToggleInline.astro";
@@ -52,7 +52,6 @@ const {
             alt="Christopher Ehrlich Avatar"
             width={200}
             height={200}
-            quality={70}
           />
         </a>
         <ThemeToggle client:only="solid-js" transition:persist />
