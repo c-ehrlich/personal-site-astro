@@ -10,29 +10,34 @@
 ---
 
 <script is:inline>
-if (!window.theme) {
-  window.theme = (() => {
-    if (
-      typeof localStorage !== "undefined" &&
-      localStorage.getItem("theme")
-    ) {
-      const themeMaybe = localStorage.getItem("theme");
-      if (themeMaybe === "light" || themeMaybe === "dark") {
-        return themeMaybe;
+function applyTheme() {
+  if (!window.theme) {
+    window.theme = (() => {
+      if (
+        typeof localStorage !== "undefined" &&
+        localStorage.getItem("theme")
+      ) {
+        const themeMaybe = localStorage.getItem("theme");
+        if (themeMaybe === "light" || themeMaybe === "dark") {
+          return themeMaybe;
+        }
+        return "light";
+      }
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
       }
       return "light";
-    }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
-  })();
+    })();
+  }
+
+  if (window.theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  window.localStorage.setItem("theme", window.theme);
 }
 
-if (window.theme === "light") {
-  document.documentElement.classList.remove("dark");
-} else {
-  document.documentElement.classList.add("dark");
-}
-window.localStorage.setItem("theme", window.theme);
+applyTheme();
+document.addEventListener("astro:after-swap", applyTheme);
 </script>
