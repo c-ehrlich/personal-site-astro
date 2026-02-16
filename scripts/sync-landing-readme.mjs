@@ -44,10 +44,17 @@ const readFileIfExists = async (filePath) => {
 };
 
 const fetchReadme = async () => {
-  const response = await fetch(README_URL, {
+  // raw.githubusercontent.com is CDN cached; force revalidation on each sync.
+  const readmeUrl = new URL(README_URL);
+  readmeUrl.searchParams.set("cb", String(Date.now()));
+
+  const response = await fetch(readmeUrl, {
+    cache: "no-store",
     headers: {
       "User-Agent": "personal-site-astro-readme-sync",
       Accept: "text/plain",
+      "Cache-Control": "no-cache",
+      Pragma: "no-cache",
     },
   });
 
