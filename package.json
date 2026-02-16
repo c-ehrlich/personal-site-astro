@@ -10,6 +10,9 @@
     ]
   },
   "scripts": {
+    "sync:landing-readme": "node scripts/sync-landing-readme.mjs",
+    "predev": "pnpm sync:landing-readme",
+    "prebuild": "pnpm sync:landing-readme",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",

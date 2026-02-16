@@ -1,27 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import LandingContent from "../content/generated/landing-readme.md";
 ---
 
 <Layout>
-  <main class="bg-info flex flex-col gap-4">
-    <h1 class="text-4xl">Hi there!</h1>
-    <p>
-      I’m passionate about building performant, data-heavy apps, leveling up developer experience, and helping teams ship fast.
-    </p>
-    <p>Right now I work remotely as a software engineer for <a href="https://axiom.co/" target="_blank"
-        >Axiom</a
-      >. Before that I spent some time at <a href="https://www.moodys.com/" target="_blank"
-        >Moody’s Analytics</a
-      >. In my spare time, I contribute to open-source projects (You might
-      know me as a maintainer of <a href="https://create.t3.gg/" target="_blank">Create T3 App</a> and contributor to <a href="https://trpc.io/" target="_blank">tRPC</a>).
-    </p>
-    <p>
-      I post about what I’m up to on my <a href="/blog">blog</a>.
-    </p>
-    <p>You can find me on
-      <a href="https://x.com/ccccjjjjeeee" target="_blank"  >Twitter</a>, <a href="https://bsky.app/profile/ccccjjjjeeee.bsky.social" target="_blank">BlueSky</a>, <a href="https://github.com/ccccjjjjeeee" target="_blank">GitHub</a>, and
-      <a href="https://www.linkedin.com/in/ccccjjjjeeee/" target="_blank">LinkedIn</a>, or <a href="https://cal.com/ccccjjjjeeee" target="_blank">book a call</a> with me.
-    </p>
-    <p>You can also send me an email at ehrlich.christopher at gmail dot com. I always appreciate hearing from you.</p>
+  <main class="bg-info">
+    <article>
+      <LandingContent />
+    </article>
   </main>
 </Layout>
