@@ -61,13 +61,29 @@ article p code {
   @apply rounded border-[1px] border-link/40 bg-link/20 px-1;
 }
 
+article ol,
+article ul {
+  @apply my-3 list-outside pl-6;
+}
+
 article ol {
-  @apply mb-2 list-inside list-decimal;
+  @apply list-decimal;
 }
 
 article ul {
-  @apply mb-2 list-inside list-disc;
-  /* TODO: check this does the right thing */
+  @apply list-disc;
+}
+
+article li + li {
+  @apply mt-3;
+}
+
+article li > p {
+  @apply m-0;
+}
+
+article li > p + p {
+  @apply mt-2;
 }
 
 article blockquote {
