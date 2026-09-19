@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseHead from "../components/BaseHead.astro";
-import { ThemeToggle } from "../components/ThemeToggle";
+import ThemeToggle from "../components/ThemeToggle.astro";
 import ThemeToggleInline from "../components/ThemeToggleInline.astro";
 import avatar from "../media/avatar.jpg";
 import "../styles/global.css";
@@ -52,9 +52,10 @@ const {
             alt="Christopher Ehrlich Avatar"
             width={200}
             height={200}
+            loading="eager"
           />
         </a>
-        <ThemeToggle client:only="solid-js" transition:persist />
+        <ThemeToggle />
       </div>
       <h1 class="font-serif text-3xl font-semibold text-text">
         Christopher Ehrlich

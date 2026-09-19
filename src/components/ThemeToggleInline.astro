@@ -10,34 +10,30 @@
 ---
 
 <script is:inline>
-function applyTheme() {
-  if (!window.theme) {
-    window.theme = (() => {
-      if (
-        typeof localStorage !== "undefined" &&
-        localStorage.getItem("theme")
-      ) {
-        const themeMaybe = localStorage.getItem("theme");
-        if (themeMaybe === "light" || themeMaybe === "dark") {
-          return themeMaybe;
-        }
-        return "light";
-      }
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        return "dark";
-      }
-      return "light";
-    })();
+  function applyTheme() {
+    // Client-side navigation preserves the toggle and its current preference.
+    const toggle = document.querySelector("theme-toggle");
+    if (toggle) {
+      document.documentElement.classList.toggle(
+        "dark",
+        toggle.getAttribute("data-theme") === "dark"
+      );
+      return;
+    }
+
+    let theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+    try {
+      const saved = localStorage.getItem("theme");
+      if (saved) theme = saved === "dark" ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+    } catch {
+      // Use the system preference when browser storage is unavailable.
+    }
+    document.documentElement.classList.toggle("dark", theme === "dark");
   }
 
-  if (window.theme === "light") {
-    document.documentElement.classList.remove("dark");
-  } else {
-    document.documentElement.classList.add("dark");
-  }
-  window.localStorage.setItem("theme", window.theme);
-}
-
-applyTheme();
-document.addEventListener("astro:after-swap", applyTheme);
+  applyTheme();
+  document.addEventListener("astro:after-swap", applyTheme);
 </script>

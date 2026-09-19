@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import solidJs from "@astrojs/solid-js";
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 
@@ -9,7 +8,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [solidJs(), mdx()],
+  integrations: [mdx()],
   markdown: {
     shikiConfig: {
       // theme list: https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes

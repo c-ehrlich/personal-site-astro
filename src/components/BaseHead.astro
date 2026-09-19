@@ -10,6 +10,7 @@ export interface Props {
 }
 
 const { title, description, isBlog, minRead }: Props = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const image = new URL(
   isBlog
@@ -17,9 +18,9 @@ const image = new URL(
         JSON.stringify({
           title,
           minRead: minRead ?? "ERROR missing minRead",
-        }),
+        })
       )}`
-    : `https://og.c-ehrlich.dev/api/landing`,
+    : `https://og.c-ehrlich.dev/api/landing`
 );
 ---
 
@@ -33,18 +34,19 @@ const image = new URL(
 <title>{isBlog ? title : title + " - Christopher Ehrlich"}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Christopher Ehrlich" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={image} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={image} />

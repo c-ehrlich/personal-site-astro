@@ -1,0 +1,74 @@
+<theme-toggle class="block select-none" transition:persist="theme-toggle">
+  <button type="button" class="text-4xl" aria-label="Toggle color theme">
+    <span class="light-icon">🌤️</span><span class="dark-icon">🌙</span>
+  </button>
+</theme-toggle>
+
+<style>
+  .dark-icon,
+  :global(html.dark) .light-icon {
+    display: none;
+  }
+
+  :global(html.dark) .dark-icon {
+    display: inline;
+  }
+</style>
+
+<script>
+  class ThemeToggle extends HTMLElement {
+    private initialized = false;
+    private animation?: Animation;
+
+    connectedCallback() {
+      if (this.initialized) return;
+      this.initialized = true;
+
+      const button = this.querySelector("button")!;
+      const updateIcon = () => {
+        const dark = document.documentElement.classList.contains("dark");
+        this.dataset.theme = dark ? "dark" : "light";
+        button.textContent = dark ? "🌙" : "🌤️";
+      };
+      updateIcon();
+
+      button.addEventListener("click", async () => {
+        const dark = document.documentElement.classList.toggle("dark");
+        this.dataset.theme = dark ? "dark" : "light";
+        try {
+          localStorage.setItem("theme", dark ? "dark" : "light");
+        } catch {
+          // The toggle still works when browser storage is unavailable.
+        }
+
+        this.animation?.cancel();
+        const exit = this.animate(
+          [
+            { transform: "translateY(0)", opacity: 1 },
+            { transform: "translateY(30px)", opacity: 0.25 },
+          ],
+          { duration: 250, easing: "ease", fill: "forwards" }
+        );
+        this.animation = exit;
+        try {
+          await exit.finished;
+        } catch {
+          // A subsequent click has started a new transition.
+          return;
+        }
+
+        updateIcon();
+        exit.cancel();
+        this.animation = this.animate(
+          [
+            { transform: "translateY(-30px)", opacity: 0.25 },
+            { transform: "translateY(0)", opacity: 1 },
+          ],
+          { duration: 250, easing: "ease" }
+        );
+      });
+    }
+  }
+
+  customElements.define("theme-toggle", ThemeToggle);
+</script>
