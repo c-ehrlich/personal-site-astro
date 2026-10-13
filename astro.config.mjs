@@ -22,5 +22,6 @@ export default defineConfig({
   site: "https://c-ehrlich.dev/",
   redirects: {
     "/blog/golang": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "/10mil": "https://www.youtube.com/watch?v=un3Lu3AKkto",
   },
 });
